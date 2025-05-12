@@ -1,0 +1,673 @@
+/* Colores base */
+    --primary-dark: #000000; 
+    --primary-medium: #222121; 
+    --primary-light: #ffffff; 
+    --secondary-dark: #373636; 
+    --neutral-light: #f0e8e0;    
+    --neutral-medium: #d6baaa;   
+    --neutral-dark: #5b5151; 
+    --secondary-light: #fafafa; 
+    --beige-medium: #b38f7e;
+    
+    /* Colores de acento */
+    --accent-orange: #faa85e; 
+    /* --accent-mint: #e4f1e4; */ 
+    --accent-lavender: #7c5295;   
+    --accent-mint: #d1e6d1;       
+    /* --accent-lavender: #8fa3ff; */
+    
+    /* Colores de texto */
+    --text-primary: #000000;
+    --text-secondary: #373636;
+
+    /* Colores hero y tarjetas*/
+    --hero-gradient-start:#222121 ; 
+    --hero-gradient-end:#6e6e6e ;
+
+    --card-hoover-background: #d1e6d1;
+    
+    --card-background-1: #8ea2ff; 
+    --card-hover-background-1: #d6baaa; 
+    --card-button-1: #d8e3b7;
+    --card-text-button-1: #242323;
+
+    --card-background-2: #8ea2ff; 
+    --card-hover-background-2: #d6baaa; 
+    --card-button-2: #d8e3b7;
+    --card-text-button-2: #242323;
+
+    --card-background-1: #8ea2ff; 
+    --card-hover-background-1: #d6baaa; 
+    --card-button-1: #d8e3b7;
+    --card-text-button-1: #242323;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    color: var(--text-primary);
+    background-color: var(--secondary-light);
+  }
+  
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    
+  }
+  
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--secondary-light);
+    border: 2px solid var(--secondary-dark);
+    border-radius: 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    margin: 1rem auto 2rem;
+    max-width: 1300px;
+    width: 95%;
+    min-height: 85px;
+    padding: 0;
+  }
+  
+  .header-heart {
+    width: 70px;
+    height: 70px;
+    margin-right: auto;
+    margin-left: 200px;
+    animation: heartbeat 2.3s ease-in-out infinite;
+    object-fit: contain;
+}
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre logo y menú */
+    padding: 10px 20px; 
+    align-items: center;
+    
+  }
+  
+  /* Menú principal horizontal */
+  .nav-links {
+    position: relative;
+  }
+  
+  .nav-links ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 0.3rem 0.8rem;
+    font-size: 1.1rem;
+  }
+  
+  .nav-links a:hover {
+    color: var(--accent-lavender);
+  }
+  
+  /* Menú hamburguesa */
+  .menu-checkbox {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: var(--accent-lavender);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  
+  .menu-toggle:hover {
+    background: rgba(255,255,255,0.2);
+  }
+  
+  /* Hero Section */
+  .hero { 
+    color: var(--primary-dark);
+    background-color : var(--secondary-light);
+    text-align: center;
+    padding-top: 0;
+    position: relative; /* Para mantener todo contenido correctamente */
+    min-height: 500px;
+    overflow: hidden;
+  }
+  
+  .hero h2 {
+    margin-top: 5.5rem;
+    margin-bottom:1rem;
+    font-size: clamp(2rem, 3vw, 3rem);
+    transition: font-size 0.3s ease; /* Responsivo fluido */
+  }
+  
+  .hero p{
+    font-size: clamp(1.2rem, 1.2vw, 1.2rem);
+    line-height: 1.4;
+    transition: font-size 0.3s ease;
+  }
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 0px;
+  margin-top: 0px
+}
+
+ .hero-images {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1300px; 
+  margin: 0 auto; 
+  align-items: flex-start; 
+  padding-left: 120px; 
+  position: relative;
+    height: 500px; /* Altura fija para posicionamiento absoluto */
+ }
+
+/* Imagen mano*/
+.hero-image.hand {
+  position: relative;
+  left: 5px;
+  transform: translateX(-30%);
+  width: 380px;
+  max-width: none;
+  height: auto;
+  z-index: 1;
+  margin-top: -40px; /* Valor negativo para subir la imagen */
+  transform: translateX(-15%) translateY(-10%); /* Ajuste vertical adicional */
+  
+} 
+
+.hero-content {
+  position: absolute;
+  right: 280px;
+  text-align: right;
+  width: 80%;
+  margin-top: -30px; 
+  margin-top: 50px; 
+  padding-right: 0%; 
+  z-index: 2;
+  
+}
+
+/* Animación float para el corazón*/
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.2); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+    60% { transform: scale(1); }
+}
+  
+  .secciones {
+    display: block; 
+    max-width: 1300px;
+    width: 95%;
+    margin: 0 auto 2rem;
+    padding: 2rem 0;
+  }
+
+  .seccion-1 {
+    background-color: var(--secondary-light); 
+    padding: 5rem 0;
+  }
+
+  .seccion-2 {
+    background-color: var(--secondary-light); 
+    padding: 5rem 0; 
+  }
+
+  .seccion-3 {
+    
+    background-color: var(--secondary-light); 
+    padding: 5rem 0; 
+  }
+
+  .seccion-4 {
+    background-color: var(--secondary-light); 
+    padding: 5rem 0; 
+  }
+
+  .container-card {
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto; 
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+
+  .card {
+    background-color: var(--secondary-light); 
+    border: 2px solid var(--accent-mint);
+    border-radius: 30px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 2rem auto; 
+    box-sizing: border-box; 
+  }
+
+  /* Estilos para las imágenes */
+.imagen-tarjeta {
+  margin-bottom: 5px;
+  position: relative;
+  animation: float 3s linear infinite;
+}
+
+.imagen-tarjeta img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+/* Animación de flotación para las imágenes */
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-10px) scale(1.1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.2);
+  }
+  75% {
+    transform: translateY(-10px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+  /*Hover de las tarjetas*/
+  .card-1:hover {
+    transform: translateY(-5px) scale(1.02);;
+    background-color: var(--secondary-light);
+    color: var(--primary-dark);
+    border-color: var(--accent-lavender);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .card-2:hover {
+    transform: translateY(-5px) scale(1.02);
+    background-color: var(--secondary-light);
+    color: var(--primary-dark);
+    border-color: var(--accent-lavender);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .card-3:hover {
+    transform: translateY(-5px) scale(1.02);
+    background-color: var(--secondary-light);
+    color: var(--primary-dark);
+    border-color: var(--accent-lavender);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .card-4:hover {
+    transform: translateY(-5px) scale(1.02);;
+    background-color: var(--secondary-light);
+    color: var(--primary-dark);
+    border-color: var(--accent-mint);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  .card h3 {
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  
+  .card p {
+    color: var(--text-secondary);
+    font-size: 1.1rem; /* 17.6px aproximadamente */
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para los enlaces */
+  .card a {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: var(--accent-lavender);
+    color: var(--primary-light);
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+  
+ /*  .card a:hover {
+    background-color: var(--accent-mint);
+    transform: scale(1.05);
+  } */
+  
+  /* Colores específicos para cada tarjeta */
+    .card-1 { 
+    width: 100%; /* Ocupará el 100% del container-card */
+    max-width: none; 
+    margin: 0 ; /* Centrado horizontal dentro del container-card */
+  }
+  
+  .card-1 a {
+    background-color: var(--card-button-1);
+    color: var(--card-text-button-1);
+  }
+  
+  .card-1 a:hover {
+    background-color: var(--card-hover-background-1); /*Color del hover del botón*/
+    border-color: #697bff; /* Azul oscuro */
+    color: var(--primary-dark); /*Color de la letra del botón*/
+  }
+  
+  .card-2 {
+    width: 100%; 
+    max-width: none; 
+    margin: 0 
+  }
+  
+  .card-2 a {
+    background-color: #b38f7e;
+    color: var(--primary-light);
+  }
+  
+  .card-2 a:hover {
+    background-color: var(--accent-lavender); 
+  }
+  
+  .card-3 {
+    width: 100%;
+    max-width: none; 
+    margin: 0 ; 
+  }
+  
+  .card-3 a {
+    background-color: var(--accent-lavender);
+    color: var(--primary-light);
+  }
+  
+  .card-3 a:hover {
+    background-color: var(--accent-orange);
+  }
+
+  /*Container para la tarjeta 4, en caso de querer cambiar el ancho*/
+  /* .card-4 container {
+    max-width: 1300px;
+    width: 95%;
+    margin: 0 auto 2rem; 
+    padding: 0 1rem;     
+  } */
+  
+  .card-4 {
+    border: 2px solid var(--accent-lavender); 
+    color: var(--primary-light);
+    padding: 2rem 0.5rem;
+  } 
+  
+  .card-4 a {
+    background-color: var(--accent-orange); 
+    color: var(--primary-medium);
+  }
+  
+  .card-4 a:hover {
+    background-color: var(--accent-mint);
+  }
+
+  /* Footer */
+  footer {
+    background: var(--primary-light);
+    padding: 2rem 0 0rem;
+  }
+  
+  .copyright {
+    background: var(--primary-dark);
+    border: 2px solid var(--primary-medium);
+    color: var(--accent-lavender);
+    padding: 0.5rem 0.5rem;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 1300px;
+    margin: 0 auto 2rem;
+  }
+  
+  .aviso-legal {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    border-top: 1px solid var(--secondary-dark);
+    padding: 1rem 0 ;
+  }
+  
+  /* Responsive Celular*/
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background: var(--primary-light);
+      padding: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transform: translateY(-10px);
+      transition: transform 0.3s;
+    }
+  
+    .nav-links ul {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    /* Ocultar menú por defecto en celular */
+    .nav-links {
+      display: none;
+    }
+  
+    /* Mostrar menú cuando el botón está marcado*/ 
+    #menu-toggle:checked ~ .nav-links {
+      display: block;
+      transform: translateY(0);
+    }
+  
+    /* Efecto de fondo oscuro */
+    #menu-toggle:checked ~ .nav-container::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: -1;
+    }
+
+    .hero {
+    min-height: auto; 
+    padding: 20px 0; 
+  }
+
+     .hero-content {
+    position: static; 
+    min-height: auto;
+    width: 90%;
+    margin: -40px auto 20px;
+    padding-top: 0;
+    text-align: center;
+    order: 2; 
+    transform: none;
+  }
+
+  .hero-images {
+    display: flex;
+    flex-direction: column; 
+    max-width: 90%;
+    margin-bottom: -190px;
+  }
+  
+  .hero-image.hand {
+    max-width: 250px; /* Un poco más pequeña*/
+    transform: translateX(-35%) translateY(-10%);
+  }
+
+  .hero h2 {
+    margin-top: 0 ;
+    font-size: 1.8rem 
+  }
+  .hero p {
+    font-size: 1rem ; 
+  }
+  
+  .header-heart {
+    margin-left: 120px;
+  }
+    .secciones {
+      grid-template-columns: 1fr;
+      padding: 2rem 0;
+    }
+
+    /* Estilos para las imágenes */
+    .imagen-tarjeta img {
+
+    width: 90px;       
+    height: 90px;      
+    object-fit: contain;
+    }
+
+  }
+  
+  /* Responsive Tablet */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+      padding: 0 2rem;
+    }
+  
+    .hero {
+      padding: 3rem 2rem;
+    }
+  
+    .hero h2 {
+    font-size: 2.2rem; 
+  }
+  .hero p {
+    font-size: 1rem ; 
+  }
+
+  .hero-image.hand {
+    max-width: 250px; /* Un poco más pequeña*/
+    transform: translateX(-35%) translateY(-10%);
+  }
+
+  .hero-content {
+    right: 100px; /* Ajuste fino de posición */
+    width: 50%;
+  }
+
+    .secciones {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  
+    .card {
+      padding: 1.5rem;
+    }
+  
+    .card .imagen-tarjeta {
+    margin-top: 10px; /* Para que la imagen no sobresalga la tarjeta */
+  }
+
+    .nav-links ul {
+      gap: 1rem;
+    }
+  
+    .nav-links a {
+      font-size: 1rem;
+    }
+  }
+
+  /* ==============================================*/
+  /* Responsive tablet grande*/
+  @media (min-width: 1024px) and (max-width: 1200) {
+      .container {
+      padding: 0 2rem;
+    }
+
+    .hero {
+      padding: 3rem 2rem;
+    }
+
+     .hero-content {
+    position: static; 
+    min-height: auto;
+    width: 90%;
+    margin: -40px auto 20px;
+    padding-top: 0;
+    text-align: center;
+    order: 2; 
+    transform: none;
+  }
+
+  .hero-images {
+    display: flex;
+    flex-direction: column; 
+    max-width: 90%;
+    margin-bottom: -190px;
+  }
+  
+  .hero-image.hand {
+    max-width: 250px; /* Un poco más pequeña*/
+    transform: translateX(-35%) translateY(-10%);
+  }
+
+
+    .secciones {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  
+    .card {
+      padding: 1.5rem;
+    }
+  
+    .card .imagen-tarjeta {
+    margin-top: 10px; /* Para que la imagen no sobresalga la tarjeta */
+  }
+
+    .nav-links ul {
+      gap: 1rem;
+    }
+  
+    .nav-links a {
+      font-size: 1rem;
+    }
+  }
+
+/* ============================================== +/
+
+  /* Contacto*/
