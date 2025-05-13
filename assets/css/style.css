@@ -54,7 +54,6 @@
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 1rem;
-    
   }
   
   /* Header */
@@ -88,7 +87,6 @@
     gap: 20px; /* Espacio entre logo y menú */
     padding: 10px 20px; 
     align-items: center;
-    
   }
   
   /* Menú principal horizontal */
@@ -193,7 +191,6 @@
   z-index: 1;
   margin-top: -40px; /* Valor negativo para subir la imagen */
   transform: translateX(-15%) translateY(-10%); /* Ajuste vertical adicional */
-  
 } 
 
 .hero-content {
@@ -205,7 +202,6 @@
   margin-top: 50px; 
   padding-right: 0%; 
   z-index: 2;
-  
 }
 
 /* Animación float para el corazón*/
@@ -236,7 +232,6 @@
   }
 
   .seccion-3 {
-    
     background-color: var(--secondary-light); 
     padding: 5rem 0; 
   }
@@ -633,7 +628,9 @@ label {
   
   .hero-image.hand {
     max-width: 250px; /* Un poco más pequeña*/
-    transform: translateX(-35%) translateY(-10%);
+    margin: auto;
+    transform: translateX(-35%) translateY(-40%);
+    transition: transform 0.4s;
   }
 
   .hero h2 {
@@ -645,7 +642,8 @@ label {
   }
   
   .header-heart {
-    margin-left: 120px;
+    margin-left: 40%;
+    
   }
     .secciones {
       grid-template-columns: 1fr;
@@ -663,17 +661,16 @@ label {
   }
   
   /* Responsive Tablet */
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media (min-width: 769px) and (max-width: 1024px) {
     .container {
       padding: 0 2rem;
     }
   
     .hero {
       padding: 3rem 2rem;
-      text-align: justify;
     }
   
-    .hero h2 {
+  .hero h2 {
     font-size: 2.2rem;
     margin-left: 1.5rem; 
   }
@@ -683,12 +680,21 @@ label {
 
   .hero-image.hand {
     max-width: 250px; /* Un poco más pequeña*/
-    transform: translateX(-45%) translateY(-10%);
+    transform: translateX(-55%) translateY(-10%);
+    transition: transform 0.4s;
   }
 
   .hero-content {
     right: 100px; /* Ajuste fino de posición */
-    width: 70%;
+    width: 60%;
+    margin:  auto ;
+    padding-left: 50%;
+    text-align: center;
+  }
+
+   .header-heart {
+    margin-left: 10%;
+    margin-top: 1%;
   }
 
     .secciones {
@@ -706,6 +712,7 @@ label {
 
     .nav-links ul {
       gap: 1rem;
+      text-align: center;
     }
   
     .nav-links a {
@@ -728,7 +735,7 @@ label {
     right: 100px; /* Ajuste fino de posición */
     min-height: auto;
     width: 70%;
-    margin: -40px auto 20px;
+    margin: auto;
     padding-top: 0;
     text-align: center;
     order: 2; 
@@ -745,8 +752,13 @@ label {
   .hero-image.hand {
     max-width: 260px; /* Un poco más pequeña*/
     transform: translateX(-35%) translateY(-10%);
+    transition: transform 0.4s;
   }
 
+  .header-heart {
+    margin-left: 10%;
+    padding: 0.7%;
+  }
 
     .secciones {
       grid-template-columns: repeat(2, 1fr);
