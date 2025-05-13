@@ -670,10 +670,12 @@ label {
   
     .hero {
       padding: 3rem 2rem;
+      text-align: justify;
     }
   
     .hero h2 {
-    font-size: 2.2rem; 
+    font-size: 2.2rem;
+    margin-left: 1.5rem; 
   }
   .hero p {
     font-size: 1rem ; 
@@ -681,12 +683,12 @@ label {
 
   .hero-image.hand {
     max-width: 250px; /* Un poco más pequeña*/
-    transform: translateX(-35%) translateY(-10%);
+    transform: translateX(-45%) translateY(-10%);
   }
 
   .hero-content {
     right: 100px; /* Ajuste fino de posición */
-    width: 50%;
+    width: 70%;
   }
 
     .secciones {
@@ -713,7 +715,7 @@ label {
 
   /* ==============================================*/
   /* Responsive tablet grande*/
-  @media (min-width: 1024px) and (max-width: 1200) {
+  @media (min-width: 1024px) and (max-width: 1200px) {
       .container {
       padding: 0 2rem;
     }
@@ -723,9 +725,9 @@ label {
     }
 
      .hero-content {
-    position: static; 
+    right: 100px; /* Ajuste fino de posición */
     min-height: auto;
-    width: 90%;
+    width: 70%;
     margin: -40px auto 20px;
     padding-top: 0;
     text-align: center;
@@ -741,7 +743,7 @@ label {
   }
   
   .hero-image.hand {
-    max-width: 250px; /* Un poco más pequeña*/
+    max-width: 260px; /* Un poco más pequeña*/
     transform: translateX(-35%) translateY(-10%);
   }
 
