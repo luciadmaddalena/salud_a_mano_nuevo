@@ -1,0 +1,63 @@
+/* Hero Section */
+  .hero { 
+    color: var(--primary-dark);
+    background-color : var(--secondary-light);
+    text-align: center;
+    padding-top: 0;
+    position: relative; /* Para mantener todo contenido correctamente */
+    min-height: 500px;
+  }
+  
+  .hero h2 {
+    margin-top: 5.5rem;
+    margin-bottom:1rem;
+    font-size: clamp(2rem, 3vw, 3rem);
+    transition: font-size 0.3s ease; /* Responsivo fluido */
+  }
+  
+  .hero p{
+    font-size: clamp(1.2rem, 1.2vw, 1.2rem);
+    line-height: 1.4;
+    transition: font-size 0.3s ease;
+  }
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+ .hero-images {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1300px; 
+  margin: 0 auto; 
+  align-items: flex-start; 
+  padding-left: 120px; 
+  position: relative;
+ }
+
+/* Imagen mano*/
+.hero-image.hand {
+  position: absolute;
+  top: 200px; /* Ajuste vertical basado en altura del contenedor */
+  left: 270px; 
+  /* =======================  width: 380px */
+  width: clamp(250px, 30vw, 380px); /*clamp(MÍNIMO, VALOR BASE, MÁXIMO)*/
+  max-width: none;
+  height: auto;
+  z-index: 1;
+  /* transform: translate(-50%, -50%); */ /* Centra el punto desde left/top */ 
+  transform: translate(-50%, -50%); 
+} 
+
+.hero-content {
+  position: absolute;
+  right: 280px;
+  text-align: right;
+  width: 80%;
+  top: 50px; 
+  z-index: 2;
+  
+}
