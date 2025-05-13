@@ -544,8 +544,8 @@ label {
   }
 
 
-  /* ========================================================================================*/
-  /* =============================================*/
+/* ========================================================================================*/
+/* =============================================*/
 
   /* Responsive Celular */
 @media (max-width: 768px) {
@@ -560,11 +560,11 @@ label {
   }
 
   .nav-container {
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  position: relative; /* para anclar el menú absoluto */
-}
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative; /* para anclar el menú absoluto */
+  }
 
 
   /* abre/cierra menú */
@@ -663,8 +663,32 @@ label {
     width: 90px;
     height: 90px;
   }
+
+  .contacto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2%;
+  }
+    
+  .formulario {
+    width: 70%;
+    height: 50%;
+    font-size: 1.5rem;
+    margin-top: 2%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    padding: 1%;
+    text-align: justify;
+    border-bottom: --primary-dark 1px solid;
+    line-height: 2rem;
+  }
+
 }
 
+/* ===============================================================================*/
+/* ==================================================*/
 /* Responsive Tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
   
@@ -797,6 +821,27 @@ label {
 
   .nav-links a {
     font-size: 1rem;
+  }
+
+  .contacto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2%;
+  }
+    
+  .formulario {
+      width: 70%;
+      height: 50%;
+      font-size: 1.5rem;
+      margin-top: 2%;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
+      padding: 1%;
+      text-align: justify;
+      border-bottom: --primary-dark 1px solid;
+      line-height: 2rem;
   }
 }
 
