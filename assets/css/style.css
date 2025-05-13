@@ -1,3 +1,4 @@
+:root {
  /* Colores base */
     --primary-dark: #000000; 
     --primary-medium: #222121; 
@@ -462,6 +463,105 @@
     padding: 1rem 0 ;
   }
   
+/* ===========================================================================================*/
+/* ============================================== +/
+
+  /* Contacto*/
+.contacto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2%;
+  }
+
+.contacto .title{
+    font-size: 2rem;
+    color: var(--primary-dark);
+    text-align: left;
+  }
+
+.formulario {
+    width: 70%;
+    height: 50%;
+    font-size: 1.5rem;
+    margin-top: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    padding: 1%;
+    text-align: justify;
+    border-bottom: --primary-dark 1px solid;
+    line-height: 2rem;
+  }
+
+label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-medium);
+    margin-top: 1.5%;
+    display: inline-block;
+  
+  }
+
+.input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 1.5%;
+    border-radius: 3px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: var(--primary-dark) 2.5px solid;
+    background-color: transparent;
+    color: var(--primary-medium);
+  }
+
+.input:hover{
+    border-color: var(--neutral-medium);
+    transition: background-color 0.3s;
+  }
+
+.option:hover{
+    background-color: var(--neutral-medium);
+    transition: background-color 0.3s;
+  }
+
+.consentimiento{
+    font-size: 1rem;
+    text-align: center;
+  }
+
+.button {
+    background-color: var(--beige-dark);
+    color: var(--primary-light);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 2%;
+    
+  }
+
+.botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 4%;
+  }
+
+.button:hover {
+    background-color: var(--neutral-medium);
+    transition: 0.3s ease;
+  }
+
+
+  /* ========================================================================================*/
   /* Responsive Celular*/
   @media (max-width: 768px) {
     .menu-toggle {
@@ -668,6 +768,3 @@
     }
   }
 
-/* ============================================== +/
-
-  /* Contacto*/
