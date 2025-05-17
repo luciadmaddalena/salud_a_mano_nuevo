@@ -13,35 +13,15 @@
     
     /* Colores de acento */
     --accent-orange: #faa85e; 
-    /* --accent-mint: #e4f1e4; */ 
+    --accent-blue:#697bff;
     --accent-lavender: #7c5295;   
-    --accent-mint: #d1e6d1;       
+    --accent-mint: #d1e6d1; 
+    /* --accent-mint: #e4f1e4; */       
     /* --accent-lavender: #8fa3ff; */
     
     /* Colores de texto */
     --text-primary: #000000;
     --text-secondary: #373636;
-
-    /* Colores hero y tarjetas*/
-    /* --hero-gradient-start:#222121 ; 
-    --hero-gradient-end:#6e6e6e ;
-
-    --card-hoover-background: #d1e6d1;
-    
-    --card-background-1: #8ea2ff; 
-    --card-hover-background-1: #d6baaa; 
-    --card-button-1: #d8e3b7;
-    --card-text-button-1: #242323;
-
-    --card-background-2: #8ea2ff; 
-    --card-hover-background-2: #d6baaa; 
-    --card-button-2: #d8e3b7;
-    --card-text-button-2: #242323;
-
-    --card-background-1: #8ea2ff; 
-    --card-hover-background-1: #d6baaa; 
-    --card-button-1: #d8e3b7;
-    --card-text-button-1: #242323; */
   }
   
   body {
@@ -71,7 +51,6 @@
     width: 95%;
     min-height: 85px;
     padding: 0;
-    overflow: hidden;
   }
   
   .header-heart {
@@ -200,7 +179,6 @@
   right: 280px;
   text-align: right;
   width: 80%;
-  margin-top: -30px; 
   margin-top: 50px; 
   padding-right: 0%; 
   z-index: 2;
@@ -305,7 +283,7 @@
 
   /*Hover de las tarjetas*/
   .card-1:hover {
-    transform: translateY(-5px) scale(1.02);;
+    transform: translateY(-5px) scale(1.02);
     background-color: var(--secondary-light);
     color: var(--primary-dark);
     border-color: var(--accent-lavender);
@@ -332,7 +310,7 @@
     transform: translateY(-5px) scale(1.02);;
     background-color: var(--secondary-light);
     color: var(--primary-dark);
-    border-color: var(--accent-mint);
+    border-color: var(--accent-lavender);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   }
   
@@ -345,7 +323,7 @@
   
   .card p {
     color: var(--text-secondary);
-    font-size: 1.1rem; /* 17.6px aproximadamente */
+    font-size: 1.1rem; 
     line-height: 1.6;
     margin-bottom: 10px;
   }
@@ -374,7 +352,7 @@
   
   .card-1 a:hover {
     background-color: var(--card-hover-background-1); /*Color del hover del botón*/
-    border-color: #697bff; /* Azul oscuro */
+    border-color: var(--accent-blue); 
     color: var(--primary-dark); /*Color de la letra del botón*/
   }
   
@@ -384,7 +362,7 @@
   }
   
   .card-2 a {
-    background-color: #b38f7e;
+    background-color: var(--beige-medium);
     color: var(--primary-light);
   }
   
@@ -407,18 +385,17 @@
   }
 
   .card-4 {
-    border: 2px solid var(--accent-lavender); 
-    color: var(--primary-light);
-    padding: 2rem 0.5rem;
-  } 
+    width: 100%;
+    max-width: none; 
+  }
   
   .card-4 a {
-    background-color: var(--accent-orange); 
-    color: var(--primary-medium);
+    background-color: var(--accent-lavender); 
+    color: var(--primary-light);
   }
   
   .card-4 a:hover {
-    background-color: var(--accent-mint);
+    background-color: var(--accent-orange);
   }
 
   /* Footer */
@@ -445,9 +422,6 @@
     border-top: 1px solid var(--secondary-dark);
     padding: 1rem 0 ;
   }
-  
-/* ===========================================================================================*/
-/* ============================================== +/
 
   /* Contacto*/
 .contacto{
@@ -455,7 +429,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 2%;
+    margin-top: 1.8%;
   }
 
 .contacto .title{
@@ -483,7 +457,6 @@ label {
     color: var(--primary-medium);
     margin-top: 1.5%;
     display: inline-block;
-  
   }
 
 .input {
@@ -543,10 +516,6 @@ label {
     transition: 0.3s ease;
   }
 
-
-/* ========================================================================================*/
-/* =============================================*/
-
   /* Responsive Celular */
 @media (max-width: 768px) {
   
@@ -566,12 +535,17 @@ label {
     position: relative; /* para anclar el menú absoluto */
   }
 
+   .nav-container #menu-toggle:checked ~ .nav-links {
+    display: block;
+    transform: translateY(0);
+  }
 
-  /* abre/cierra menú */
+
+  /* abre y cierra menú */
   .nav-links {
     display: none; /* Ocultar menú en celular */
     position: absolute;
-    top: 50px; 
+    top: 100%; 
     left: 0;
     width: 100%;
     background: var(--secondary-light);
@@ -579,31 +553,18 @@ label {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     transform: translateY(-10px);
     transition: transform 0.3s;
+    z-index: 1001;
   }
 
-/* ======*/
   .nav-links ul {
       flex-direction: column;
       gap: 1rem;
   }
-/* ======*/
 
   /* Mostrar menú cuando el botón está marcado*/
   #menu-toggle:checked ~ .nav-links {
     display: block;
     transform: translateY(0);
-  }
-
-  /* Efecto de fondo oscuro */
-  #menu-toggle:checked ~ .nav-container::before {
-    content: '';
-    position: fixed; 
-    top:0; 
-    left:0;
-    width:100%; 
-    height:100%;
-    background: rgba(0,0,0,0.5);
-    z-index: -1;
   }
 
   .header-heart {
@@ -687,8 +648,6 @@ label {
 
 }
 
-/* ===============================================================================*/
-/* ==================================================*/
 /* Responsive Tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
   
@@ -705,8 +664,7 @@ label {
   margin-top: 0.5rem;
   margin-bottom: auto;
   z-index: 2;
-}
-
+  }
 
   .nav-container {
     position: relative; /*para posicionar el corazón */
@@ -729,7 +687,7 @@ label {
   .nav-links {
     display: none;
     position: absolute;
-    top: 50px;
+    top: 100%; /* el menú desplegable aparece abajo del header*/
     left: 0;
     width: 100%;
     background: var(--secondary-light);
