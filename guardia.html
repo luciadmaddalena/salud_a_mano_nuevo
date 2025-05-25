@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salud a Mano - Portal de Salud Pública</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container nav-container">
+        <h1>Salud a Mano</h1>
+        <!-- Checkbox para controlar el menú -->
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+        <label for="menu-toggle" class="menu-toggle">☰</label>
+
+        <nav class="nav-links">
+          <ul>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="#">Campañas</a></li>
+            <li><a href="#">Centros y Turnos</a></li>
+            <li><a href="#">¿Guardia Sí o No?</a></li>
+            <li><a href="./contact.html">Sumate</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="guardia">
+        <h2 class="">¿Debo ir a la guardia?</h2>
+        <p>
+          Responda las siguientes preguntas con <strong>Sí</strong> o
+          <strong>No</strong>. Al final obtendrá una recomendación orientativa.
+        </p>
+      </div>
+
+      <div class="box-guardia">
+        <form class="formulario-guardia">
+          <div class="caja-guardia">
+            <fieldset class="fieldset-guardia">
+              <legend>🩺 Sección 1: Signos de alarma</legend>
+              <label
+                >1. ¿Tenés fiebre mayor a 38.5°C por más de 48 horas?
+                <select class="select-guardia" name="alarma1">
+                  <option value="no">No</option>
+                  <option value="si">Sí</option>
+                </select>
+              </label>
+
+              <label
+                >2. ¿Te cuesta respirar incluso en reposo?
+                <select class="select-guardia" name="alarma2">
+                  <option value="no">No</option>
+                  <option value="si">Sí</option>
+                </select>
+              </label>
+
+              <label
+                >3. ¿Tenés dolor en el pecho al respirar o toser?
+                <select class="select-guardia" name="alarma3">
+                  <option value="no">No</option>
+                  <option value="si">Sí</option>
+                </select>
+              </label>
+
+              <label
+                >4. ¿Somnolencia o dificultad para despertarte?
+                <select class="select-guardia" name="alarma4">
+                  <option value="no">No</option>
+                  <option value="si">Sí</option>
+                </select>
+              </label>
+
+              <label
+                >5. ¿Vómitos persistentes que impiden hidratarte?
+                <select class="select-guardia" name="alarma5">
+                  <option value="no">No</option>
+                  <option value="si">Sí</option>
+                </select>
+              </label>
+
+              <label
+                >6. ¿Tenés enfermedades crónicas y estás empeorando?
+                <select class="select-guardia" name="alarma6">
+                  <option value="no">No</option>
+                  <option value="si">Sí</option>
+                </select>
+              </label>
+
+              <label
+                >7. ¿Sos menor de 2 años o mayor de 65 con síntomas
+                respiratorios intensos?
+                <select class="select-guardia" name="alarma7">
+                  <option value="no">No</option>
+                  <option value="si">Sí</option>
+                </select>
+              </label>
+            </fieldset>
+          </div>
+
+          <div class="caja-guardia">
+            <fieldset>
+              <legend>🤧 Sección 2: Síntomas leves</legend>
+              <label
+                >1. ¿Congestión nasal o secreción?
+                <select class="select-guardia" name="leve1">
+                  <option value="no">No</option>
+                  <option value="si">Sí</option>
+                </select>
+              </label>
+
+              <label
+                >2. ¿Dolor de garganta al tragar?
+                <select class="select-guardia" name="leve2">
+                  <option value="no">No</option>
+                  <option value="si">Sí</option>
+                </select>
+              </label>
+
+              <label
+                >3. ¿Tos seca o con flema?
+                <select class="select-guardia" name="leve3">
+                  <option value="no">No</option>
+                  <option value="si">Sí</option>
+                </select>
+              </label>
+
+              <label
+                >4. ¿Dolor de cabeza, cuerpo cortado o fatiga?
+                <select class="select-guardia" name="leve4">
+                  <option value="no">No</option>
+                  <option value="si">Sí</option>
+                </select>
+              </label>
+
+              <label
+                >5. ¿Disminuyó el apetito pero seguís comiendo o bebiendo?
+                <select class="select-guardia" name="leve5">
+                  <option value="no">No</option>
+                  <option value="si">Sí</option>
+                </select>
+              </label>
+            </fieldset>
+          </div>
+
+          <button class="button-recomendacion" type="button">Ver recomendación</button>
+
+          <p class="aclaracion-guardia">📝 <strong> Aclaración importante:</strong>
+Este formulario es solo una herramienta orientativa y no reemplaza una consulta médica. Si tenés dudas, síntomas graves o empeoramiento, no dudes en acudir al sistema de salud.</p>
+
+          <div id="resultado" class="resultado"></div>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="copyright">
+          <p>&copy; 2025 Salud a Mano - Todos los derechos reservados.</p>
+        </div>
+        <p class="aviso-legal">
+          <strong>Aviso legal:</strong> La información contenida en este sitio
+          web tiene fines exclusivamente informativos y orientativos. No
+          sustituye el asesoramiento, diagnóstico ni tratamiento médico
+          profesional. Salud a Mano no garantiza la exactitud ni actualidad de
+          los datos provistos y no asume responsabilidad por decisiones tomadas
+          por los usuarios. El uso del contenido es responsabilidad exclusiva
+          del visitante.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
