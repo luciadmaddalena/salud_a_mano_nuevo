@@ -14,7 +14,7 @@
     
     /* Colores de acento */
     --accent-orange: #faa85e; 
-    --accent-blue:#697bff;
+  --accent-blue: #697bff;
     --accent-lavender: #7c5295;   
     --accent-mint: #d1e6d1; 
     --accent-dark-mint: #d8e3b7;
@@ -36,7 +36,6 @@
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 1rem;
-    
   }
   
   /* Header */
@@ -46,7 +45,7 @@
     background: var(--secondary-light);
     border: 2px solid var(--secondary-dark);
     border-radius: 30px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     margin: 1rem auto 2rem;
     max-width: 1300px;
@@ -682,7 +681,6 @@ label {
   .container {
     padding: 0 2rem;
   }
-
   .menu-toggle {
   display: block;
   position: absolute;
@@ -693,7 +691,6 @@ label {
   margin-bottom: auto;
   z-index: 2;
   }
-
   .nav-container {
     position: relative; /*para posicionar el corazón */
     display: flex;
