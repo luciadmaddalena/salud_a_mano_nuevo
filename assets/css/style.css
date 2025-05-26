@@ -10,12 +10,14 @@
     --secondary-light: #fafafa; 
     --beige-medium: #b38f7e;
     --beige-dark: #4A4A4A;
+    --dark-brown: #242323;
     
     /* Colores de acento */
     --accent-orange: #faa85e; 
     --accent-blue:#697bff;
     --accent-lavender: #7c5295;   
     --accent-mint: #d1e6d1; 
+    --accent-dark-mint: #d8e3b7;
     /* --accent-mint: #e4f1e4; */       
     /* --accent-lavender: #8fa3ff; */
     
@@ -49,8 +51,10 @@
     margin: 1rem auto 2rem;
     max-width: 1300px;
     width: 95%;
-    min-height: 85px;
+    height: 85px;  
+   /*  min-height: 85px;  */
     padding: 0;
+    
   }
   
   .header-heart {
@@ -65,10 +69,9 @@
   .nav-container {
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* Espacio entre logo y menú */
+    gap: 20px; 
     padding: 10px 20px; 
-    align-items: center;
-    
+    align-items: center; 
   }
   
   /* Menú principal horizontal */
@@ -199,28 +202,28 @@
     max-width: 1300px;
     width: 95%;
     margin: 0 auto 2rem;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
 
   .seccion-1 {
     background-color: var(--secondary-light); 
-    padding: 5rem 0;
+    padding: 1.5rem 0;
   }
 
   .seccion-2 {
     background-color: var(--secondary-light); 
-    padding: 5rem 0; 
+    padding: 1.5rem 0; 
   }
 
   .seccion-3 {
     
     background-color: var(--secondary-light); 
-    padding: 5rem 0; 
+    padding: 1.5rem 0; 
   }
 
   .seccion-4 {
     background-color: var(--secondary-light); 
-    padding: 5rem 0; 
+    padding: 1.5rem 0; 
   }
 
   .container-card {
@@ -245,7 +248,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 2rem auto; 
+    margin: clamp(0.1rem, 1.5vw, 2.5rem) auto;
     box-sizing: border-box; 
   }
 
@@ -339,19 +342,19 @@
     transition: all 0.3s ease;
   }
   
-  /* Colores específicos para cada tarjeta */
+  /* Colores y características específicas para cada tarjeta */
     .card-1 { 
     width: 100%; /* Ocupará el 100% del container-card */
     max-width: none; 
   }
   
   .card-1 a {
-    background-color: var(--card-button-1);
-    color: var(--card-text-button-1);
+    background-color: var(--accent-dark-mint);
+    color: var(--dark-brown);
   }
   
   .card-1 a:hover {
-    background-color: var(--card-hover-background-1); /*Color del hover del botón*/
+    background-color: var(--neutral-medium); /*Color del hover del botón*/
     border-color: var(--accent-blue); 
     color: var(--primary-dark); /*Color de la letra del botón*/
   }
@@ -516,30 +519,59 @@ label {
     transition: 0.3s ease;
   }
 
-  /* Responsive Celular */
+  /* ============== Responsive Celular =================*/
 @media (max-width: 768px) {
-  
-  .menu-toggle {
-  display: block;
-  position: absolute; /* sale del flex */
-  right: 20px;                
-  top: 40px;                    
-  transform: translateY(-50%);
-  z-index: 2;
+
+   .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 2rem;  
+    z-index: 2;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
   .nav-container {
     display: flex;
     justify-content: center; 
     align-items: center;
-    position: relative; /* para anclar el menú absoluto */
+    position: relative; 
+    height: 70px;                 
+    padding: 0 20px; 
+  }
+
+  /* .nav-container h1 {
+    font-size: clamp(1.4rem, 4vw, 2.1rem);
+    max-width: 70%;
+  } */
+
+    header {
+    height: 70px; 
+    min-height: unset;
+  }
+
+   .header-title {
+    font-size: clamp(1.6rem, 4vw, 2.1rem);
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;                           
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+    line-height: 1;
+    z-index: 1;   
   }
 
    .nav-container #menu-toggle:checked ~ .nav-links {
     display: block;
     transform: translateY(0);
   }
-
 
   /* abre y cierra menú */
   .nav-links {
@@ -615,15 +647,11 @@ label {
     font-size: 1rem;
   }
 
-  .secciones {
-    grid-template-columns: 1fr;
-    padding: 2rem 0;
-  }
-
   .imagen-tarjeta img {
     width: 90px;
     height: 90px;
   }
+
 
   .contacto{
     display: flex;
@@ -649,7 +677,7 @@ label {
 }
 
 /* Responsive Tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   
   .container {
     padding: 0 2rem;
@@ -803,8 +831,6 @@ label {
   }
 }
 
-/* =====================================================================/
-/* ==================================================*/
 /* Responsive Tablet Grande */
 @media (min-width: 1024px) and (max-width: 1200px) {
   
@@ -863,12 +889,6 @@ label {
     z-index: 1;
   }
 
-  .secciones {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 1.5rem;
-  }
-
   .card {
     padding: 1.5rem;
   }
@@ -887,4 +907,473 @@ label {
 }
 
 
+/* ====================================================================================*/
+/* search =============================================================================*/
 
+/*============================================================================*/
+/*Tarjeta con selector de ciudad*/
+
+.contenido-ciudades {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+
+/* Selector (izquierda en desktop) */
+.selector-ciudad {
+  flex: 1 0 250px;
+  max-width: 250px;
+}
+
+/* Carrusel (derecha en desktop) */
+.ciudad-card {
+  flex: 1 0 80%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.titulo-seccion {
+  text-align: right;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  /* font-size: 1.8rem; */
+  margin-bottom: 2rem;
+}
+
+.selector-ciudad select {
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  background-color: var(--neutral-medium);
+  color: var(--secondary-dark);
+  border: none;
+  appearance: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estado al enfocar */
+.selector-ciudad select:focus {
+  outline: none;
+  background-color: var(--accent-dark-mint);
+  color: var(--primary-dark);
+}
+
+/* Estado cuando hay una opción seleccionada */
+.selector-ciudad select:valid {
+  background-color: var(--accent-orange);
+  color: var(--primary-dark);
+}
+
+/* El carrusel adentro de la mini-card */
+.card-1 .carrusel-ciudades {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.card-1 .carrusel-ciudades img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.card-1 .carrusel-ciudades.selected {
+  box-shadow: 0 0 0 2px var(--accent-orange);
+  border-radius: 1rem;
+}
+
+.grid-ciudades {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.mini-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: clamp(120px, 40vw, 180px);
+  padding: 1rem;
+  background-color:var(--secondary-light);
+  border: 2px solid var(--accent-mint);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+} 
+
+.mini-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.mini-card img {
+  width: clamp(100px, 15vw, 160px);
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.mini-card span {
+  font-weight: 500;
+  text-align: center;
+}
+
+input[type="radio"]:checked + label.mini-card {
+  border-color: var(--accent-orange);
+  /* box-shadow: 0 0 10px var(--accent-lavender); */
+}
+
+/*===================M+ovil mini*/
+@media (max-width: 359px) {
+
+  .contenido-ciudades {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Orden: selector arriba, carrusel abajo */
+  /* .selector-ciudad {
+    order: 1;
+    width: 100%;
+    max-width: none;
+  }
+
+  .ciudad-card {
+    order: 2;
+    width: clamp(200px, 80%, 300px);
+    margin: 0 auto;
+  }
+} */
+
+
+.selector-ciudad {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selector-ciudad h2 {
+  font-size: clamp(1.4rem, 4vw, 2.1rem);
+  margin: 0;
+}
+
+.ciudad-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+  .grid-ciudades {
+  gap: 0.75rem;
+  }
+
+  .mini-card {
+    width: clamp(30px, 30vw, 50px);
+  }
+
+  .mini-card img {
+    width: clamp(20px, 25vw, 40px);
+  }
+
+  .mini-card span {
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
+    font-weight: 500;
+    text-align: center;    
+  }
+  
+  .titulo-seccion {
+    text-align: center;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    margin-bottom: 2rem;
+  }
+}
+
+
+/*================Media query para móvil normal*/
+@media (min-width: 360px) and (max-width: 768px) {
+
+
+  .grid-ciudades {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(0.3rem, 4vw, 3rem);
+  }
+
+  .mini-card {
+    width: clamp(80px, 25vw, 120px);
+    padding: 0.75rem;
+    box-sizing: border-box;
+  }
+
+  .mini-card img {
+    width: clamp(50px, 20vw, 80px);
+    height: auto;
+  }
+
+  .mini-card span {
+    font-size: clamp(0.7rem, 2vw, 0.95rem);
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .titulo-seccion {
+    text-align: center;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    margin-bottom: 2rem;
+  }
+}
+
+/* Separador de mini tarjetas*/
+@media (min-width: 769px) {
+  .grid-ciudades {
+    gap: clamp(2rem, 10vw, 10rem);
+  }
+}
+
+
+/*===============================================================================*/
+/*Tarjeta con selector de  especialidad*/
+
+.card-2 .titulo-seccion {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  text-align: center;
+  /* font-size: 1.5rem; */
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.card-2 .contenido-especialidades {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: clamp(1rem, 8vw, 4rem); /*separa el carrusel y el selector*/
+  flex-wrap: nowrap; 
+  max-width: 100%;
+  padding: 1rem 0;
+}
+
+/* Mini tarjeta con carrusel adentro (izquierda) */
+.card-2 .especialidad-card {
+  width: clamp(150px, 30vw, 250px);
+  padding: 0.5rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 1rem;
+  background-color: var(--secondary-light);
+  flex-shrink: 0;
+  
+}
+
+/* El carrusel adentro de la mini-card */
+.card-2 .carrusel {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.card-2 .carrusel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.card-2 .carrusel.selected {
+  box-shadow: 0 0 0 2px var(--accent-orange);
+  border-radius: 1rem;
+}
+
+.card-2:hover .especialidad-card {
+  background-color: var(--secondary-light); /* igual al hover original */
+  transform: scale(1.05); /* igual al hover de .mini-card */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* mismo efecto de sombra */
+  border-color: var(--accent-mint); /* opcional: para mantener consistencia */
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*==========================================================*/
+/* Selector a la derecha */
+.selector-especialidad {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 250px; 
+  width: 100%;
+}
+
+/* Estilo base del select */
+.selector-especialidad select {
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  background-color: var(--neutral-medium);
+  color: var(--secondary-dark);
+  border: none;
+  appearance: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo cuando el select está enfocado (pero no seleccionado) */
+.selector-especialidad select:focus {
+  outline: none;
+  background-color: var(--accent-dark-mint);
+  color: var(--primary-dark);
+}
+
+/* Estilo cuando hay una opción seleccionada */
+.selector-especialidad select:valid {
+  background-color: var(--accent-orange);
+  color: var(--primary-dark);
+}
+
+/* Clase para que la label del selector esté oculta. Esto se hace para que la pag sea inclusiva*/
+.oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; /*empuja a la etiqueta fuera del área visible*/
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==============================Móvil */
+@media (max-width: 768px) {
+  .card-2 .contenido-especialidades {
+    flex-direction: column;  
+     padding: 2rem 0;      
+  }
+
+  .card-2 .especialidad-card {
+    width: 90%;                  
+    max-width: 250px;            
+    margin: 0 auto;              
+  }
+
+  .selector-especialidad {
+    width: 90%;                 
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .selector-especialidad {
+    order: 2; 
+    width: 100%;
+  }
+
+  .especialidad-card {
+    order: 1;
+    width: clamp(200px, 80%, 300px);
+    margin: 0 auto;
+  }
+
+  .card-2 .titulo-seccion {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    text-align: center;
+    padding-left: 0; 
+
+  }
+}
+
+/* ===============================================================================*/
+/* Sección 3: Mapa */
+#mapa {
+  width: 100%;
+  height: 400px;
+  min-height: 300px;
+  border-radius: 30px;
+  margin-top: 1rem;
+  box-sizing: border-box;
+}
+
+.card .map-container:hover {
+  transform: translateY(-5px) scale(1.02);
+  background-color: var(--secondary-light);
+  color: var(--primary-dark);
+  border-color: var(--accent-orange);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive: Móvil */
+@media (max-width: 768px) {
+  .card.card-3 {
+    max-width: 100%; 
+    padding: 0.4rem; 
+  }
+  #mapa {
+    height: 500px;  
+    
+  } 
+  }
+
+
+
+/* =======================================================================*/
+/* Sección 4 : Info */
+.card-4 .card-info:hover {
+  transform: translateY(-5px) scale(1.02);
+  background-color: var(--secondary-light);
+  color: var(--primary-dark);
+  border-color: var(--accent-orange);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card-4 .card-info,
+#info-centro {
+  box-sizing: border-box;        
+  width: 100%;                   
+  overflow-wrap: break-word;     
+  word-wrap: break-word;         
+  word-break: break-word; /* Forzar quiebre si hay aún texto muy largo */
+  white-space: normal; /* Que el texto pueda hacer wraps */
+  overflow-y: auto; max-height: 100%; /* scroll interno */
+}
+
+#titulo-info {
+  /* mínimo 1rem, ideal 4vw, máximo 1.5rem */
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.card-4 #info-centro h3 {
+  font-size: clamp(0.8rem, 3vw, 1.8rem);
+}
+
+.card-4 #info-centro p {
+  /* Tamaño letra info */
+  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+  line-height: 1.4;
+}
+
+.card-4 #info-centro a {
+  /* Tamaño enlace */
+  font-size: clamp(0.5rem, 2vw, 0.7rem);
+}
+
+@media (max-width: 768px) {
+  .card-4 .card-info {
+    padding: 0.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card.card-4 {
+    max-width: 100%; 
+    padding: 0.4rem; 
+  }
+  } 
+  

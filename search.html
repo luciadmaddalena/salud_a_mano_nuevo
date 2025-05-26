@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud a Mano - Portal de Salud</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Leaflet CSS -->
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <h1 class="header-title">Salud a Mano</h1>
+          <!-- <h1>Salud a Mano</h1> -->
+          
+          <!-- Checkbox para controlar el menú -->
+          <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+          <label for="menu-toggle" class="menu-toggle">☰</label>
+    
+          <nav class="nav-links">
+            <ul>
+              <li><a href="./index.html">Inicio</a></li>
+              <li><a href="#">Campañas</a></li>
+              <li><a href="./search.html">Centros y Turnos</a></li>
+              <li><a href="#">¿Guardia Sí o No?</a></li>
+              <li><a href="./contact.html">Sumate</a></li>
+            </ul>
+          </nav>
+        </div>             
+    </header>
+
+    <main>
+        <!--Sección para elegir ciudad-->
+        <!-- <section class="seccion-1">
+            <div class="container-card">
+                <div class="card card-1">
+                    <h2 class="titulo-seccion">Elegí tu ciudad</h2>
+                    
+                    <div class="grid-ciudades">
+                        <!-- Input Brandsen -->
+                        <!-- <input type="radio" name="ciudad" id="ciudad-brandsen" value="Brandsen" hidden> 
+                        <label for="ciudad-brandsen" class="mini-card">
+                            <img src="assets/img/bransden.png" alt="Brandsen">
+                            <span>Brandsen</span>
+                        </label> -->
+                        <!-- Input La Plata -->
+                        <!-- <input type="radio" name="ciudad" id="ciudad-laplata" value="La Plata" hidden>
+                        <label for="ciudad-laplata" class="mini-card">
+                            <img src="assets/img/catedral.png" alt="La Plata">
+                            <span>La Plata</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section> --> 
+
+        <!-- Sección con carrusel de ciudades y selector -->
+<section class="seccion-1">
+  <div class="container-card">
+    <div class="card card-1">
+      <div class="contenido-ciudades">
+        
+        <!-- Selector (izquierda en desktop, arriba en móvil) -->
+        <div class="selector-ciudad">
+          <h2 class="titulo-seccion">Elegí tu ciudad</h2>
+          <!-- Etiqueta oculta para accesibilidad -->
+          <label for="ciudad-select" class="oculto">Seleccioná una ciudad</label>
+          <select id="ciudad-select" name="ciudad" required>
+            <option value="">-- Seleccioná una opción --</option>
+            <option value="Brandsen">Brandsen</option>
+            <option value="La Plata">La Plata</option>
+          </select>
+        </div>
+
+        <!-- Carrusel de imágenes (derecha en desktop, abajo en móvil) -->
+        <div class="ciudad-card">
+          <div class="carrusel-ciudades">
+            <img id="img-ciudad" src="assets/img/bransden.png" alt="Brandsen">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <!--Sección con selector de especialidades y slides-->
+        <section class="seccion-2">
+            <div class="container-card">
+                <div class="card card-2">
+                    <div class="contenido-especialidades">
+                    <!-- Mini-tarjeta con carrusel -->
+                        <div class="especialidad-card">
+                            <div class="carrusel">
+                                <img id="img-1" src="assets/img/alergologia_.png" alt="Primera imagen">
+                            </div>
+                        </div>
+
+                        <!-- Selector (izquierda en desktop, arriba en móvil) -->
+                        <div class="selector-especialidad">
+                            <h2 class="titulo-seccion">Buscá la especialidad que necesitás</h2>
+                        <!-- Etiqueta oculta para el selector -->
+                        <label for="specialidad-select" class="oculto">Seleccioná una especialidad</label>
+                        <select id="specialidad-select" name="especialidad" required>
+                            <option value="">-- Seleccioná una opción --</option>
+                            <option value="Alergología">Alergología</option>
+                            <option value="Cardiología">Cardiología</option>
+                            <option value="Dermatología">Dermatología</option>
+                            <option value="Clínica médica">Clínica médica</option>
+                            <option value="Endocrinología">Endocrinología</option>
+                            <option value="Gastroenterología">Gastroenterología</option>
+                            <option value="Ginecología">Ginecología</option>
+                            <option value="Medicina familiar">Medicina familiar</option>
+                            <option value="Nefrología">Nefrolología</option>
+                            <option value="Neumonología">Neumonología</option>
+                            <option value="Neurología">Neurología</option>
+                            <option value="Odontología">Odontología</option>
+                            <option value="Oftalmología">Oftalmología</option>
+                            <option value="Oncología">Oncología</option>
+                            <option value="Otorrinolaringología">Otorrinolaringología</option>
+                            <option value="Pediatría">Pediatría</option>
+                            <option value="Psiquiatría">Psiquiatría</option>
+                            <option value="Reumatología">Reumatología</option>
+                            <option value="Traumatología">Traumatología</option>
+                            <option value="Urología">Urología</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Sección con mapa-->
+        <section class="seccion-3">
+            <div class="container-card">
+                <div class="card card-3">
+                    <div id="mapa" class="card map-container"></div>
+                </div> 
+            </div>
+        </section>
+
+        <!--Sección con información disponibles-->
+        <section class="seccion-4">
+            <div class="container-card">
+                <div class="card card-4">
+                    <div class="card card-info" id="card-4">
+                        <h2 id="titulo-info">Información del centro de salud seleccionado</h2>
+                        <div id="info-centro"></div> <!-- Vacío, para mostrar los datos -->
+                    </div>    
+                </div>
+            </div>
+        </section>
+
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2025 Salud a Mano - Todos los derechos reservados.</p>
+            </div>
+                <p class="aviso-legal"><strong>Aviso legal:</strong> La información contenida en este sitio web tiene fines exclusivamente informativos y orientativos. No sustituye el asesoramiento, diagnóstico ni tratamiento médico profesional. Salud a Mano no garantiza la exactitud ni actualidad de los datos provistos y no asume responsabilidad por decisiones tomadas por los usuarios. El uso del contenido es responsabilidad exclusiva del visitante.</p>
+            </div>
+    </footer>
+
+    </main>
+
+  <script src="script.js"></script>    
+</body>
+</html>
