@@ -1,0 +1,21 @@
+[
+  {
+    "nombre": "Hospital Municipal Francisco Caram",
+    "coordenadas": [-35.18066, -58.22555],
+    "ciudad": "Brandsen",
+    "especialidades": ["Clínica médica", "Pediatría"]
+  },
+  {
+    "nombre": "Hospital Rossi",
+    "coordenadas": [-34.89654, -57.95489],
+    "ciudad": "La Plata",
+    "especialidades": ["Cardiología", "Oncología"]
+  },
+  {
+    "nombre": "Hospital San Martín",
+    "coordenadas": [-34.92252642663594, -57.9231627723465],
+    "ciudad": "La Plata",
+    "especialidades": ["Cardiología"]
+  }
+
+]
