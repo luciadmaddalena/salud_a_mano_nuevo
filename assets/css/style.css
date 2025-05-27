@@ -971,11 +971,9 @@ label {
 
 /* Responsive Tablet Grande */
 @media (min-width: 1024px) and (max-width: 1200px) {
-  .container {
+  /* .container {
     padding: 0 2rem;
-  }
-
-   
+  } */
 
   .header-heart {
     margin-left: 10%;
