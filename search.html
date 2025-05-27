@@ -19,7 +19,6 @@
     <header>
         <div class="container nav-container">
             <h1 class="header-title">Salud a Mano</h1>
-          <!-- <h1>Salud a Mano</h1> -->
           
           <!-- Checkbox para controlar el menú -->
           <input type="checkbox" id="menu-toggle" class="menu-checkbox">
@@ -38,59 +37,36 @@
     </header>
 
     <main>
-        <!--Sección para elegir ciudad-->
-        <!-- <section class="seccion-1">
+    
+        <!-- Sección para elegir ciudad (carrusel y selector) -->
+        <section class="seccion-1">
             <div class="container-card">
                 <div class="card card-1">
-                    <h2 class="titulo-seccion">Elegí tu ciudad</h2>
+                    <div class="contenido-ciudades">
                     
-                    <div class="grid-ciudades">
-                        <!-- Input Brandsen -->
-                        <!-- <input type="radio" name="ciudad" id="ciudad-brandsen" value="Brandsen" hidden> 
-                        <label for="ciudad-brandsen" class="mini-card">
-                            <img src="assets/img/bransden.png" alt="Brandsen">
-                            <span>Brandsen</span>
-                        </label> -->
-                        <!-- Input La Plata -->
-                        <!-- <input type="radio" name="ciudad" id="ciudad-laplata" value="La Plata" hidden>
-                        <label for="ciudad-laplata" class="mini-card">
-                            <img src="assets/img/catedral.png" alt="La Plata">
-                            <span>La Plata</span>
-                        </label>
-                    </div>
+                        <!-- Selector (izquierda en desktop, arriba en móvil) -->
+                        <div class="selector-ciudad">
+                            <h2 class="titulo-seccion">Elegí tu ciudad</h2>
+                            <!-- Etiqueta oculta para accesibilidad -->
+                            <label for="ciudad-select" class="oculto">Seleccioná una ciudad</label>
+                            <select id="ciudad-select" name="ciudad" required>
+                                <option value="">-- Seleccioná una opción --</option>
+                                <option value="Brandsen">Brandsen</option>
+                                <option value="La Plata">La Plata</option>
+                            </select>
+                        </div>
+
+                        <!-- Carrusel de imágenes (derecha en desktop, abajo en móvil) -->
+                        <div class="ciudad-card">
+                        <div class="carrusel-ciudades">
+                            <img id="img-ciudad" src="assets/img/bransden.png" alt="Brandsen">
+                        </div>
+                        </div>
+
                 </div>
             </div>
-        </section> --> 
-
-        <!-- Sección con carrusel de ciudades y selector -->
-<section class="seccion-1">
-  <div class="container-card">
-    <div class="card card-1">
-      <div class="contenido-ciudades">
-        
-        <!-- Selector (izquierda en desktop, arriba en móvil) -->
-        <div class="selector-ciudad">
-          <h2 class="titulo-seccion">Elegí tu ciudad</h2>
-          <!-- Etiqueta oculta para accesibilidad -->
-          <label for="ciudad-select" class="oculto">Seleccioná una ciudad</label>
-          <select id="ciudad-select" name="ciudad" required>
-            <option value="">-- Seleccioná una opción --</option>
-            <option value="Brandsen">Brandsen</option>
-            <option value="La Plata">La Plata</option>
-          </select>
         </div>
-
-        <!-- Carrusel de imágenes (derecha en desktop, abajo en móvil) -->
-        <div class="ciudad-card">
-          <div class="carrusel-ciudades">
-            <img id="img-ciudad" src="assets/img/bransden.png" alt="Brandsen">
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
         <!--Sección con selector de especialidades y slides-->
