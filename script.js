@@ -10,7 +10,7 @@ let indexCard1 = 0;
 // Referencia al <img> en la tarjeta 1
 const imgCard1 = document.getElementById("img-ciudad");
 
-// Actualiza la imagen mostrada
+// Actualización de imagen mostrada
 function updateImageCard1() {
   imgCard1.src = imagesCard1[indexCard1];
 }
@@ -23,6 +23,40 @@ function nextImageCard1() {
 
 // Inicia el carrusel automático (puede ajustar el tiempo)
 let intervalCard1 = setInterval(nextImageCard1, 1500); // 2 segundos
+
+// === Selección de ciudad para Tarjeta 1
+const ciudades = ["Brandsen", "La Plata"];
+const selectCiudad = document.getElementById("ciudad-select");
+const carruselCard1 = document.querySelector(".card-1 .carrusel-ciudades");
+
+// Detener el carrusel cuando se selecciona una ciudad
+selectCiudad.addEventListener("change", (e) => {
+  const valor = e.target.value;
+  const idx = ciudades.indexOf(valor);
+
+  if (idx !== -1) {
+    // Ciudad válida seleccionada
+    clearInterval(intervalCard1);
+    intervalCard1 = null;
+
+    indexCard1 = idx;
+    updateImageCard1();
+
+    // Aplica resaltado
+    carruselCard1.classList.remove("selected");
+    void carruselCard1.offsetWidth; // reinicia animación
+    carruselCard1.classList.add("selected");
+
+  } else {
+    // Si se vuelve a la opción vacía, reiniciar carrusel
+    if (!intervalCard1) {
+      intervalCard1 = setInterval(nextImageCard1, 1500);
+    }
+    carruselCard1.classList.remove("selected");
+  }
+});
+
+
 
 
 
@@ -88,22 +122,20 @@ const imgElement = document.getElementById("img-1");
 function updateImage() {
   imgElement.src = images[currentIndex];
 }
-
 // Botón de siguiente imagen
 function nextImage() {
   currentIndex = (currentIndex + 1) % images.length; // Avanza y vuelve al inicio
   updateImage();
 }
-
-
 // Botón de imagen anterior
 function prevImage() {
   currentIndex = (currentIndex - 1 + images.length) % images.length; // Retrocede de forma segura
   updateImage();
-}
+} 
 
 // 
 const selectEsp = document.getElementById("specialidad-select");
+/* const selectEsp = document.getElementById("specialidad-select"); */
 const carruselEl = document.querySelector(".card-2 .carrusel");
 
 // Detener el carrusel cuando se seleccione una especialidad
@@ -167,15 +199,10 @@ document.addEventListener("DOMContentLoaded", function () {
           const marker = L.marker(centro.coordenadas).addTo(map);
           // Quito cualquier popup previo y enlazo uno nuevo
           marker
-            .bindPopup(`<b>${centro.nombre}</b><br>${centro.especialidades.join(", ")}`)
-            .on("popupopen", () => {
-              // Cuando se abre el popup, agrego un listener al elemento
-              const popupEl = marker.getPopup().getElement();
-              popupEl.style.cursor = "pointer";      // para que el usuario vea que es clickeable
-              popupEl.addEventListener("click", () => {
-                seleccionarCentro(centro);
-              });
-            });
+          .bindPopup(`<b>${centro.nombre}</b><br>${centro.especialidades.join(", ")}`)
+          .on("click", () => {
+          seleccionarCentro(centro);
+          });
         });
 
         // d) Ajusto el zoom para que quepan todos
@@ -184,26 +211,29 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
-      // 3) Interactividad con tus inputs
-      const ciudadInputs = document.querySelectorAll('input[name="ciudad"]');
+      // 3) Interactividad con los select
+
+      const ciudadSelect = document.getElementById("ciudad-select");
       const especialidadSelect = document.getElementById("specialidad-select");
 
-      ciudadInputs.forEach(input =>
-        input.addEventListener("change", () => {
-          const ciudad = input.checked ? input.value : "";
-          if (ciudad && especialidadSelect.value) {
-            actualizarMapa(ciudad, especialidadSelect.value);
-          }
-        })
-      );
+      // Cuando cambie ciudad...
+      ciudadSelect.addEventListener("change", () => {
+      const ciudad       = ciudadSelect.value;
+      const especialidad = especialidadSelect.value;
+      if (ciudad && especialidad) actualizarMapa(ciudad, especialidad);
+    });
+
+
+      // Cuando cambie especialidad...
       especialidadSelect.addEventListener("change", () => {
-        const ciudadInput = document.querySelector('input[name="ciudad"]:checked');
-        if (ciudadInput && especialidadSelect.value) {
-          actualizarMapa(ciudadInput.value, especialidadSelect.value);
-        }
-      });
-    })
-    .catch(err => console.error(err));
+      const ciudad       = ciudadSelect.value;
+      const especialidad = especialidadSelect.value;
+      if (ciudad && especialidad) actualizarMapa(ciudad, especialidad);
+    });
+
+  })  
+
+  .catch(err => console.error(err));
 
   // 4) Variables y funciones para seleccionar un centro y volcar su info
   let centroSeleccionado = null;
