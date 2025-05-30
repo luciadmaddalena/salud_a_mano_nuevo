@@ -1,8 +1,8 @@
 //=================== Tarjeta 1
 // Lista de rutas de imágenes para carrusel de la tarjeta 1
 const imagesCard1 = [
-  "assets/img/brandsen.png",  
-  "assets/img/catedral.png"
+  "../assets/img/brandsen.png",  
+  "../assets/img/catedral.png"
 ];
 
 let indexCard1 = 0;
@@ -87,26 +87,26 @@ const especialidades = [
 
 // Lista de rutas de las imágenes
 const images = [
-  "assets/img/alergologia_.png",
-  "assets/img/cardiologia.png",
-  "assets/img/dermatologia.png",
-  "assets/img/clinica_medica.png",
-  "assets/img/endocrinologia.png",
-  "assets/img/gastroenterologia.png",
-  "assets/img/ginecologia.png",
-  "assets/img/medicina_familiar.png",
-  "assets/img/nefrologia.png",
-  "assets/img/neumonologia.png",
-  "assets/img/neurologia.png",
-  "assets/img/odontologia.png",
-  "assets/img/oftalmologia.png",
-  "assets/img/oncologia.png",
-  "assets/img/otorrinolaringologia.png",
-  "assets/img/pediatria.png", 
-  "assets/img/psiquiatria.png",
-  "assets/img/reumatologia.png",
-  "assets/img/traumatologia.png",
-  "assets/img/urologia.png",
+  "../assets/img/alergologia_.png",
+  "../assets/img/cardiologia.png",
+  "../assets/img/dermatologia.png",
+  "../assets/img/clinica_medica.png",
+  "../assets/img/endocrinologia.png",
+  "../assets/img/gastroenterologia.png",
+  "../assets/img/ginecologia.png",
+  "../assets/img/medicina_familiar.png",
+  "../assets/img/nefrologia.png",
+  "../assets/img/neumonologia.png",
+  "../assets/img/neurologia.png",
+  "../assets/img/odontologia.png",
+  "../assets/img/oftalmologia.png",
+  "../assets/img/oncologia.png",
+  "../assets/img/otorrinolaringologia.png",
+  "../assets/img/pediatria.png", 
+  "../assets/img/psiquiatria.png",
+  "../assets/img/reumatologia.png",
+  "../assets/img/traumatologia.png",
+  "../assets/img/urologia.png",
 ];
 
 let currentIndex = 0;
@@ -172,32 +172,32 @@ document.addEventListener("DOMContentLoaded", function () {
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
-  // Forzar recálculo de tamaño
+  
   setTimeout(() => map.invalidateSize(), 300);
 
-  // 2) Cargo datos de centros de salud
-  fetch("assets/data/centros_salud.json")
+  // 2) se cargan datos de centros de salud
+  fetch("../assets/data/centros_salud.json")
     .then(res => {
       if (!res.ok) throw new Error("No se pudo cargar JSON");
       return res.json();
     })
     .then(data => {
-      // Aquí definimos la única función actualizarMapa, que tiene acceso a `map` y a `data`
+      // función que tiene acceso a `map` y a `data`
       function actualizarMapa(ciudad, especialidad) {
-        // a) Quito los markers viejos
+        // a) se quitan los marcadores viejos
         map.eachLayer(layer => {
           if (layer instanceof L.Marker) map.removeLayer(layer);
         });
 
-        // b) Filtro los centros
+        // b) se filtran los centros
         const resultados = data.filter(c =>
           c.ciudad === ciudad && c.especialidades.includes(especialidad)
         );
 
-        // c) Creo los nuevos markers
+        // c) se crean los nuevos marcadores
         resultados.forEach(centro => {
           const marker = L.marker(centro.coordenadas).addTo(map);
-          // Quito cualquier popup previo y enlazo uno nuevo
+          // se quita cualquier popup previo y se enlaza uno nuevo
           marker
           .bindPopup(`<b>${centro.nombre}</b><br>${centro.especialidades.join(", ")}`)
           .on("click", () => {
@@ -205,18 +205,17 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         });
 
-        // d) Ajusto el zoom para que quepan todos
+        // d) se ajusta el zoom para que quepan todos
         if (resultados.length) {
           map.fitBounds(resultados.map(c => c.coordenadas));
         }
       }
 
       // 3) Interactividad con los select
-
       const ciudadSelect = document.getElementById("ciudad-select");
       const especialidadSelect = document.getElementById("specialidad-select");
 
-      // Cuando cambie ciudad...
+      // cambi0 de ciudad
       ciudadSelect.addEventListener("change", () => {
       const ciudad       = ciudadSelect.value;
       const especialidad = especialidadSelect.value;
@@ -224,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-      // Cuando cambie especialidad...
+      // cambio de especialidad
       especialidadSelect.addEventListener("change", () => {
       const ciudad       = ciudadSelect.value;
       const especialidad = especialidadSelect.value;
@@ -235,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   .catch(err => console.error(err));
 
-  // 4) Variables y funciones para seleccionar un centro y volcar su info
+  // 4) Variables y funciones para seleccionar un centro y mostrar su info
   let centroSeleccionado = null;
 
   function seleccionarCentro(centro) {

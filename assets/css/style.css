@@ -143,10 +143,23 @@ header {
     background-color : var(--secondary-light);
     text-align: center;
     padding-top: 0;
-    position: relative; /* Para mantener todo contenido correctamente */
+    position: relative; 
     min-height: 500px;
     overflow: hidden;
+    /* position: relative;
+    z-index: 0;  */
+
   }
+
+/*   .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, var(--accent-mint), var(--accent-lavender));
+  filter: blur(60px);
+  opacity: 0.4;
+  z-index: -1;
+} */
   
   .hero h2 {
     margin-top: 5.5rem;
@@ -428,7 +441,7 @@ footer {
   border: 2px solid var(--primary-medium);
   color: var(--accent-mint);
   padding: 0.5rem 0.5rem;
-  border-radius: 5rem;
+  border-radius: 3rem;
   text-align: center;
   max-width: 1300px;
   margin: 0 auto 2rem;
@@ -442,9 +455,49 @@ footer {
   padding: 1rem 0;
 }
 
+/* ========Estilos del hero de todas las paginas */
+.hero-pages {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1rem;
+  text-align: center;
+  z-index: 0;
+  min-height: 350px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.hero-pages::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, var(--accent-mint), var(--accent-lavender));
+  filter: blur(60px);
+  opacity: 0.4;
+  z-index: -1;
+}
 
-/* Contacto*/
+.hero-pages-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-all-pages h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.hero-all-pages p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ===================Estilos para la sección Contacto=====================*/
 .contacto {
   display: flex;
   justify-content: center;
@@ -486,7 +539,7 @@ label {
   font-size: 1rem;
   padding: 10px;
   margin-bottom: 1.5%;
-  border-radius: 3px;
+  border-radius: 30px;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -540,7 +593,7 @@ label {
 
 
 
-/* Estilos para la sección de Guardia */
+/* ==================Estilos para la sección de Guardia================= */
 .guardia {
   max-width: 80%;
   margin: auto;
@@ -644,12 +697,401 @@ label {
   padding: 2%;
 }
 
+/*================= Estilos para la sección Búsqueda de centros (search) =============================*/
+
+/*Tarjeta con selector de ciudad*/
+.card-1 .contenido-ciudades {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: center;          
+  gap: clamp(1rem, 8vw, 4rem); 
+  flex-wrap: nowrap; 
+  max-width: 100%;
+  padding: 1rem 0;
+} 
+
+.card-1 .titulo-seccion {
+  text-align: center;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+/* Minitarjeta con carrusel (derecha en desktop) */
+.card-1 .ciudad-card {
+  width: clamp(150px, 30vw, 250px);
+  padding: 0.5rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 3rem;
+  background-color: var(--secondary-light);
+  flex-shrink: 0;
+}
+
+/* carrusel adentro de la mini-card */
+.card-1 .carrusel-ciudades {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.card-1 .carrusel-ciudades img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 3rem;
+}
+
+.card-1 .carrusel-ciudades.selected {
+  box-shadow: 0 0 0 2px var(--accent-orange);
+  border-radius: 3rem;
+}
+
+.card-1:hover .ciudad-card {
+  background-color: var(--secondary-light); 
+  transform: scale(1.05); 
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+  border-color: var(--accent-mint); 
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Selector (izquierda en desktop) */
+.selector-ciudad {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 250px; 
+  width: 100%;
+}
+
+.selector-ciudad select {
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  background-color: var(--neutral-medium);
+  color: var(--secondary-dark);
+  border: none;
+  appearance: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estado al enfocar */
+.selector-ciudad select:focus {
+  outline: none;
+  background-color: var(--accent-dark-mint);
+  color: var(--primary-dark);
+}
+
+/* Estado cuando hay una opción seleccionada */
+.selector-ciudad select:valid {
+  background-color: var(--accent-orange);
+  color: var(--primary-dark);
+}
+
+/* Estilo cuando hay una opción seleccionada */
+.selector-ciudad select:valid {
+  background-color: var(--accent-orange);
+  color: var(--primary-dark);
+}
+
+input[type="radio"]:checked + label.mini-card {
+  border-color: var(--accent-orange);
+}
+
+.oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; /*empuja a la etiqueta fuera del área visible*/
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*Tarjeta 2: selector de  especialidad*/
+
+.card-2 .titulo-seccion {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  text-align: center;
+  /* font-size: 1.5rem; */
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.card-2 .contenido-especialidades {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: clamp(1rem, 8vw, 4rem); /*separa el carrusel y el selector*/
+  flex-wrap: nowrap; 
+  max-width: 100%;
+  padding: 1rem 0;
+}
+
+/* Mini tarjeta con carrusel adentro (izquierda) */
+.card-2 .especialidad-card {
+  width: clamp(150px, 30vw, 250px);
+  padding: 0.5rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 3rem;
+  background-color: var(--secondary-light);
+  flex-shrink: 0;
+  
+}
+
+/* El carrusel adentro de la mini-card */
+.card-2 .carrusel {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.card-2 .carrusel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 3rem;
+}
+
+.card-2 .carrusel.selected {
+  box-shadow: 0 0 0 2px var(--accent-orange);
+  border-radius: 3rem;
+}
+
+.card-2:hover .especialidad-card {
+  background-color: var(--secondary-light); 
+  transform: scale(1.05); 
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+  border-color: var(--accent-mint); 
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Selector a la derecha */
+.selector-especialidad {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 250px; 
+  width: 100%;
+}
+
+/* Estilo base del select */
+.selector-especialidad select {
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  background-color: var(--neutral-medium);
+  color: var(--secondary-dark);
+  border: none;
+  appearance: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo cuando el select está enfocado (pero no seleccionado) */
+.selector-especialidad select:focus {
+  outline: none;
+  background-color: var(--accent-dark-mint);
+  color: var(--primary-dark);
+}
+
+/* Estilo cuando hay una opción seleccionada */
+.selector-especialidad select:valid {
+  background-color: var(--accent-orange);
+  color: var(--primary-dark);
+}
+
+/* Clase para que la label del selector esté oculta. Esto se hace para que la pag sea inclusiva*/
+.oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; /*empuja a la etiqueta fuera del área visible*/
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 
+/* ---Tarjeta 3: Mapa---*/
+#mapa {
+  width: 100%;
+  height: 400px;
+  min-height: 300px;
+  border-radius: 3rem;
+  margin-top: 1rem;
+  box-sizing: border-box;
+}
 
+.card .map-container:hover {
+  transform: translateY(-5px) scale(1.02);
+  background-color: var(--secondary-light);
+  color: var(--primary-dark);
+  border-color: var(--accent-orange);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
 
+/* Tarjeta 4 : Info */
+.card-4 .card-info:hover {
+  transform: translateY(-5px) scale(1.02);
+  background-color: var(--secondary-light);
+  color: var(--primary-dark);
+  border-color: var(--accent-orange);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
 
-/* ============== Responsive Celular =================*/
+.card-4 .card-info,
+#info-centro {
+  box-sizing: border-box;        
+  width: 100%;                   
+  overflow-wrap: break-word;     
+  word-wrap: break-word;         
+  word-break: break-word; 
+  white-space: normal; 
+  overflow-y: auto; max-height: 100%; 
+}
+
+#titulo-info {
+  /* mínimo 1rem, ideal 4vw, máximo 1.5rem */
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.card-4 #info-centro h3 {
+  font-size: clamp(0.8rem, 3vw, 1.8rem);
+}
+
+.card-4 #info-centro p {
+  /* Tamaño letra info */
+  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+  line-height: 1.4;
+}
+
+.card-4 #info-centro a {
+  /* Tamaño enlace */
+  font-size: clamp(0.5rem, 2vw, 0.7rem);
+}
+
+@media (max-width: 768px) {
+ 
+}
+  
+
+/*================== Estilos de la sección Campañas =================================*/  
+.grid-campañas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem 0;
+  align-items: stretch;
+}
+
+.card-campaña {
+  background: var(--secondary-light);
+  border: 2px solid var(--accent-mint);
+  border-radius: 3rem;
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-campaña:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  background-color: var(--secondary-light);
+  color: var(--primary-dark);
+  border-color: var(--accent-lavender);
+}
+
+.campaña-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.mini-tarjeta-img {
+  background-color: var(--secondary-light);
+  border: 2px solid var(--accent-mint); 
+  border-radius: 3rem;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  max-width: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.campaña-img {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+.campaña-img img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+
+.campaña-texto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  max-width: 400px;
+  font-size: clamp(0.8rem, 3vw, 1.2rem);
+}
+
+.campaña-texto h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.contenido-superior {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: auto;
+  margin-bottom: 3rem;
+  padding: .75rem 1.5rem;
+  background: var(--accent-lavender);
+  color: var(--primary-light);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background .3s;
+}
+
+.btn:hover {
+  background: var(--accent-orange);
+}
+
+/* ============== Responsive Celular ======================================*/
 @media (max-width: 768px) {
 
    .menu-toggle {
@@ -832,9 +1274,94 @@ label {
     line-height: 1.4;
   }
 
+  /* search : tarjeta 1 */
+  .card-1 .contenido-ciudades {
+    flex-direction: column;  
+     padding: 2rem 0;      
+  }
+
+  .card-1 .ciudad-card {
+    width: 90%;                  
+    max-width: 250px;            
+    margin: 0 auto;              
+  }
+
+  .selector-ciudad {
+    width: 100%;                 
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .ciudad-card {
+    order: 1;
+    width: clamp(200px, 80%, 300px);
+    margin: 0 auto;
+  }
+
+  .card-1 .titulo-seccion {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    text-align: center;
+    padding-left: 0; 
+  }
+
+  /* search :tarjeta 2 */
+  .card-2 .contenido-especialidades {
+    flex-direction: column;  
+     padding: 2rem 0;      
+  }
+
+  .card-2 .especialidad-card {
+    width: 90%;                  
+    max-width: 250px;            
+    margin: 0 auto;              
+  }
+
+  .selector-especialidad {
+    width: 100%;                 
+    max-width: 250px;
+    margin: 0 auto;
+    order: 2; 
+  }
+
+  .especialidad-card {
+    order: 1;
+    width: clamp(200px, 80%, 300px);
+    margin: 0 auto;
+  }
+
+  .card-2 .titulo-seccion {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    text-align: center;
+    padding-left: 0; 
+  }
+
+  /* search : tarjeta 3 */
+  .card.card-3 {
+    max-width: 100%; 
+    padding: 0.4rem; 
+  }
+  #mapa {
+    height: 500px;  
+    
+  } 
+
+  /* search: tarjeta 4 */
+   .card-4 .card-info {
+    padding: 0.1rem;
+  }
+
+  .card.card-4 {
+    max-width: 100%; 
+    padding: 0.4rem; 
+  }
+
+  /* Sección campañas */
+  .campaña-content {
+    flex-direction: column; 
+  }  
 }
 
-/* Responsive Tablet */
+/* ===================== Responsive Tablet =======================*/
 @media (min-width: 769px) and (max-width: 1024px) {
   
   .container {
@@ -1049,497 +1576,4 @@ label {
 }
 
 
-/* ====================================================================================*/
-/* search =============================================================================*/
-
-/*============================================================================*/
-/*Tarjeta con selector de ciudad*/
-
-.card-1 .contenido-ciudades {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; 
-  align-items: center;          
-  gap: clamp(1rem, 8vw, 4rem); 
-  flex-wrap: nowrap; 
-  max-width: 100%;
-  padding: 1rem 0;
-} 
-
-.card-1 .titulo-seccion {
-  text-align: center;
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-}
-
-/* Minitarjeta con carrusel (derecha en desktop) */
-.card-1 .ciudad-card {
-  width: clamp(150px, 30vw, 250px);
-  padding: 0.5rem;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  border-radius: 5rem;
-  background-color: var(--secondary-light);
-  flex-shrink: 0;
-}
-
-/* carrusel adentro de la mini-card */
-.card-1 .carrusel-ciudades {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-.card-1 .carrusel-ciudades img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 5rem;
-}
-
-.card-1 .carrusel-ciudades.selected {
-  box-shadow: 0 0 0 2px var(--accent-orange);
-  border-radius: 5rem;
-}
-
-.card-1:hover .ciudad-card {
-  background-color: var(--secondary-light); 
-  transform: scale(1.05); 
-  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
-  border-color: var(--accent-mint); 
-  transition: all 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Selector (izquierda en desktop) */
-.selector-ciudad {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  max-width: 250px; 
-  width: 100%;
-}
-
-.selector-ciudad select {
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  background-color: var(--neutral-medium);
-  color: var(--secondary-dark);
-  border: none;
-  appearance: none;
-  cursor: pointer;
-  font-size: 1rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Estado al enfocar */
-.selector-ciudad select:focus {
-  outline: none;
-  background-color: var(--accent-dark-mint);
-  color: var(--primary-dark);
-}
-
-/* Estado cuando hay una opción seleccionada */
-.selector-ciudad select:valid {
-  background-color: var(--accent-orange);
-  color: var(--primary-dark);
-}
-
-/* Estilo cuando hay una opción seleccionada */
-.selector-ciudad select:valid {
-  background-color: var(--accent-orange);
-  color: var(--primary-dark);
-}
-
-input[type="radio"]:checked + label.mini-card {
-  border-color: var(--accent-orange);
-}
-
-.oculto {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px; /*empuja a la etiqueta fuera del área visible*/
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/*===================M+ovil */
-@media (max-width: 768px) {
-
-.card-1 .contenido-ciudades {
-    flex-direction: column;  
-     padding: 2rem 0;      
-  }
-
-  .card-1 .ciudad-card {
-    width: 90%;                  
-    max-width: 250px;            
-    margin: 0 auto;              
-  }
-
-  .selector-ciudad {
-    width: 100%;                 
-    max-width: 250px;
-    margin: 0 auto;
-  }
-
-  .ciudad-card {
-    order: 1;
-    width: clamp(200px, 80%, 300px);
-    margin: 0 auto;
-  }
-
-  .card-1 .titulo-seccion {
-    font-size: clamp(1rem, 4vw, 1.2rem);
-    text-align: center;
-    padding-left: 0; 
-  }
-
-}
-
-/*===============================================================================*/
-/*Tarjeta 2: selector de  especialidad*/
-
-.card-2 .titulo-seccion {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  text-align: center;
-  /* font-size: 1.5rem; */
-  margin-bottom: 1rem;
-  padding-left: 1rem;
-}
-
-.card-2 .contenido-especialidades {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: clamp(1rem, 8vw, 4rem); /*separa el carrusel y el selector*/
-  flex-wrap: nowrap; 
-  max-width: 100%;
-  padding: 1rem 0;
-}
-
-/* Mini tarjeta con carrusel adentro (izquierda) */
-.card-2 .especialidad-card {
-  width: clamp(150px, 30vw, 250px);
-  padding: 0.5rem;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  border-radius: 5rem;
-  background-color: var(--secondary-light);
-  flex-shrink: 0;
-  
-}
-
-/* El carrusel adentro de la mini-card */
-.card-2 .carrusel {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-.card-2 .carrusel img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 5rem;
-}
-
-.card-2 .carrusel.selected {
-  box-shadow: 0 0 0 2px var(--accent-orange);
-  border-radius: 5rem;
-}
-
-.card-2:hover .especialidad-card {
-  background-color: var(--secondary-light); 
-  transform: scale(1.05); 
-  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
-  border-color: var(--accent-mint); 
-  transition: all 0.3s ease, box-shadow 0.3s ease;
-}
-
-/*==========================================================*/
-/* Selector a la derecha */
-.selector-especialidad {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  max-width: 250px; 
-  width: 100%;
-}
-
-/* Estilo base del select */
-.selector-especialidad select {
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  background-color: var(--neutral-medium);
-  color: var(--secondary-dark);
-  border: none;
-  appearance: none;
-  cursor: pointer;
-  font-size: 1rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo cuando el select está enfocado (pero no seleccionado) */
-.selector-especialidad select:focus {
-  outline: none;
-  background-color: var(--accent-dark-mint);
-  color: var(--primary-dark);
-}
-
-/* Estilo cuando hay una opción seleccionada */
-.selector-especialidad select:valid {
-  background-color: var(--accent-orange);
-  color: var(--primary-dark);
-}
-
-/* Clase para que la label del selector esté oculta. Esto se hace para que la pag sea inclusiva*/
-.oculto {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px; /*empuja a la etiqueta fuera del área visible*/
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* ==============================Móvil */
-@media (max-width: 768px) {
-  .card-2 .contenido-especialidades {
-    flex-direction: column;  
-     padding: 2rem 0;      
-  }
-
-  .card-2 .especialidad-card {
-    width: 90%;                  
-    max-width: 250px;            
-    margin: 0 auto;              
-  }
-
-  .selector-especialidad {
-    width: 100%;                 
-    max-width: 250px;
-    margin: 0 auto;
-    order: 2; 
-  }
-
-  .especialidad-card {
-    order: 1;
-    width: clamp(200px, 80%, 300px);
-    margin: 0 auto;
-  }
-
-  .card-2 .titulo-seccion {
-    font-size: clamp(1rem, 4vw, 1.2rem);
-    text-align: center;
-    padding-left: 0; 
-
-  }
-}
-
-/* ===============================================================================*/
-/* Sección 3: Mapa */
-#mapa {
-  width: 100%;
-  height: 400px;
-  min-height: 300px;
-  border-radius: 5rem;
-  margin-top: 1rem;
-  box-sizing: border-box;
-}
-
-.card .map-container:hover {
-  transform: translateY(-5px) scale(1.02);
-  background-color: var(--secondary-light);
-  color: var(--primary-dark);
-  border-color: var(--accent-orange);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-/* Responsive: Móvil */
-@media (max-width: 768px) {
-  .card.card-3 {
-    max-width: 100%; 
-    padding: 0.4rem; 
-  }
-  #mapa {
-    height: 500px;  
-    
-  } 
-  }
-
-/* =======================================================================*/
-/* Sección 4 : Info */
-.card-4 .card-info:hover {
-  transform: translateY(-5px) scale(1.02);
-  background-color: var(--secondary-light);
-  color: var(--primary-dark);
-  border-color: var(--accent-orange);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.card-4 .card-info,
-#info-centro {
-  box-sizing: border-box;        
-  width: 100%;                   
-  overflow-wrap: break-word;     
-  word-wrap: break-word;         
-  word-break: break-word; 
-  white-space: normal; 
-  overflow-y: auto; max-height: 100%; 
-}
-
-#titulo-info {
-  /* mínimo 1rem, ideal 4vw, máximo 1.5rem */
-  font-size: clamp(1.2rem, 4vw, 1.5rem);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.card-4 #info-centro h3 {
-  font-size: clamp(0.8rem, 3vw, 1.8rem);
-}
-
-.card-4 #info-centro p {
-  /* Tamaño letra info */
-  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
-  line-height: 1.4;
-}
-
-.card-4 #info-centro a {
-  /* Tamaño enlace */
-  font-size: clamp(0.5rem, 2vw, 0.7rem);
-}
-
-@media (max-width: 768px) {
-  .card-4 .card-info {
-    padding: 0.1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .card.card-4 {
-    max-width: 100%; 
-    padding: 0.4rem; 
-  }
-  } 
-  
-/* =========================== Campañas =================================== */
-.grid-campañas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 2rem 0;
-  align-items: stretch;
-}
-
-.card-campaña {
-  background: var(--secondary-light);
-  border: 2px solid var(--accent-mint);
-  border-radius: 5rem;
-  overflow: hidden;
-  transition: transform .3s, box-shadow .3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.card-campaña:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  background-color: var(--secondary-light);
-  color: var(--primary-dark);
-  border-color: var(--accent-lavender);
-}
-
-.campaña-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-}
-
-.mini-tarjeta-img {
-  background-color: var(--secondary-light);
-  border: 2px solid var(--accent-mint); 
-  border-radius: 5rem;
-  padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  max-width: 400px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.campaña-img {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.campaña-img img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  display: block;
-}
-
-.campaña-texto {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1.5rem 2rem;
-  max-width: 500px;
-  font-size: clamp(0.8rem, 3vw, 1.2rem);
-}
-
-.campaña-texto h3 {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-}
-
-.contenido-superior {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: auto;
-  margin-bottom: 3rem;
-  padding: .75rem 1.5rem;
-  background: var(--accent-lavender);
-  color: var(--primary-light);
-  border-radius: 30px;
-  text-decoration: none;
-  transition: background .3s;
-}
-
-.btn:hover {
-  background: var(--accent-orange);
-}
-
-@media (min-width: 768px) {
-  .campaña-content {
-    flex-direction: column; 
-  }
-}
 
