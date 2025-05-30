@@ -3,19 +3,26 @@
     "nombre": "Hospital Municipal Francisco Caram",
     "coordenadas": [-35.18066, -58.22555],
     "ciudad": "Brandsen",
-    "especialidades": ["Clínica médica", "Pediatría"]
+    "especialidades": ["Cardiología","Dermatología", "Clínica médica", "Ginecología", "Neurología", "Odontología", "Oftalmología", "Oncología", "Otorrinolaringología", "Pediatría",
+  "Traumatología", "Urología"],
+    "turnos": "Telefónicos: de lunes a viernes de 9 a 14 hs.Desde teléfonos fijos: 0800-222-1686 (línea gratuita).Desde Celulares: 02223-445420"
+
   },
   {
     "nombre": "Hospital Rossi",
     "coordenadas": [-34.89654, -57.95489],
     "ciudad": "La Plata",
-    "especialidades": ["Cardiología", "Oncología"]
+    "especialidades": ["Alergología","Cardiología", "Dermatología", "Clínica médica", "Endocrinología", "Gastroenterología", "Ginecología", "Nefrología",
+  "Neurología", "Odontología", "Oftalmología", "Oncología", "Otorrinolaringología", "Reumatología", "Traumatología" ],
+    "turnos" : "Por Whatsapp al +54 9 221 556-7674 "
   },
   {
     "nombre": "Hospital San Martín",
     "coordenadas": [-34.92252642663594, -57.9231627723465],
     "ciudad": "La Plata",
-    "especialidades": ["Cardiología"]
+    "especialidades": ["Alergología","Cardiología", "Clínica médica", "Dermatología", "Ginecología", "Nefrología", "Neurología", "Odontología",
+  "Oftalmología", "Oncología", "Otorrinolaringología", "Reumatología", "Traumatología", "Urología" ],
+    "turnos": "Muchos de los servicios se encuentran habilitados para poder solicitar tu turno de forma virtual en https://turnos.higa.net.ar/ y https://www.ms.gba.gov.ar/sitios/saluddigitalbonaerense/turnos-web/"
   }
 
 ]
