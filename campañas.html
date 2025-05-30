@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salud a Mano - Portal de Salud Pública</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+        <div class="container nav-container">
+            <h1 class="header-title">Salud a Mano</h1>
+          
+          <!-- Checkbox para controlar el menú -->
+          <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+          <label for="menu-toggle" class="menu-toggle">☰</label>
+    
+          <nav class="nav-links">
+            <ul>
+              <li><a href="./index.html">Inicio</a></li>
+              <li><a href="./campañas.html">Campañas</a></li>
+              <li><a href="./search.html">Centros y Turnos</a></li>
+              <li><a href="./guardia.html">¿Guardia Sí o No?</a></li>
+              <li><a href="./contact.html">Sumate</a></li>
+            </ul>
+          </nav>
+        </div>             
+    </header>
+
+<main>  
+    <section class="hero">
+      <div class="container hero-container">
+        <div class="hero-campañas">
+          <h2>Accedé a campañas activas e información de salud pública en la región</h2> 
+          <p>Información oficial, actualizada y accesible sobre prevención, vacunación y programas provinciales.</p>
+        </div>
+      </div>
+    </section>
+
+
+<section class="seccion-campañas">
+  <div class="container-card grid-campañas">
+    
+    <!-- Tarjeta 1: imagen arriba en móvil, a la izquierda en desktop -->
+    <div class="card card-campaña">
+      <div class="campaña-content">
+        <div class="contenido-superior">
+            <div class="campaña-img">
+                <div class="mini-tarjeta-img">
+                    <img src="assets/img/sarampion.png" alt="Alerta Sarampión">
+                </div>    
+            </div>
+            <div class="campaña-texto">
+                <h3>Alerta Sarampión</h3>
+                <p>Campaña focalizada contra sarampión en contexto de brote 2025 en AMBA.</p>
+            </div>
+        </div>
+        <a href="https://nc.ms.gba.gov.ar/index.php/s/HzWzy3ACzdAjrpt" class="btn">Centros de vacunación en AMBA</a>
+      </div>
+    </div>
+
+    <!-- Tarjeta 2:  -->
+    <div class="card card-campaña">
+      <div class="campaña-content">
+        <div class="contenido-superior">
+            <div class="campaña-img">
+                <div class="mini-tarjeta-img">
+                    <img src="assets/img/dengue.png" alt="Otra Campaña">
+                </div>
+            </div>
+            <div class="campaña-texto">
+            <h3>Campaña Dengue</h3>
+             <p>Prevención y vacunación.</p>
+            </div>
+        </div>
+          <a href="https://www.gba.gob.ar/dengue/#vacunacion" class="btn">Más información</a>
+        
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="card card-campaña">
+      <div class="campaña-content">
+        <div class="contenido-superior">
+            <div class="campaña-img">
+                <div class="mini-tarjeta-img">
+                    <img src="assets/img/covid.png" alt="Campaña 3">
+                </div>
+            </div>
+            <div class="campaña-texto">
+                <h3>Covid</h3>
+                <p>Programa de atención a personas que atravesaron Covid.</p>
+            </div>
+            </div>
+          <a href="https://portal-coronavirus.gba.gob.ar/es" class="btn">Síntomas y Consultorios</a>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="card card-campaña">
+      <div class="campaña-content">
+         <div class="contenido-superior">
+        <div class="campaña-img">
+            <div class="mini-tarjeta-img">
+            <img src="assets/img/dona_sangre.png" alt="Campaña 4">
+            </div>
+        </div>
+        <div class="campaña-texto">
+          <h3>Donar sangre salva vidas</h3>
+          <p>Todos los días hay personas que necesitan una transfusión de sangre.</p>
+          </div>
+          </div>
+          <a href="https://www.ms.gba.gov.ar/sitios/hemoterapia/quiero-donar/donde-donar/" class="btn">Dónde donar</a>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="card card-campaña">
+      <div class="campaña-content">
+         <div class="contenido-superior">
+        <div class="campaña-img">
+            <div class="mini-tarjeta-img">
+                <img src="assets/img/maternidad.png" alt="Campaña 5">
+            </div>
+        </div>
+        <div class="campaña-texto">
+          <h3>Maternidad y Salud Perinatal</h3>
+          <p>Recomendaciones y pautas de alarma. Ley de parto respetado. Acompañamiento en lactancia y crianza.</p>
+          </div>
+          </div>
+          <a href="https://www.ms.gba.gov.ar/sitios/maternidad/" class="btn">Más info</a>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="card card-campaña">
+      <div class="campaña-content reverse">
+        <div class="contenido-superior"></div>
+        <div class="campaña-img">
+            <div class="mini-tarjeta-img">
+                <img src="assets/img/aborto.png" alt="Campaña 6">
+            </div>
+        </div>
+        <div class="campaña-texto">
+          <h3>Aborto</h3>
+          <p>La interrupción del embarazo es un derecho y lo ampara la Ley N° 27.610 en todo el territorio nacional y la provincia de Buenos Aires.</p>
+          </div>
+          </div>
+          <a href="https://www.ms.gba.gov.ar/sitios/aborto/" class="btn">¿Cómo acceder a un aborto?</a>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+</main>  
+  <footer>
+    <div class="container">
+      <div class="copyright">
+        <p>&copy; 2025 Salud a Mano - Todos los derechos reservados.</p>
+      </div>
+      <p class="aviso-legal"><strong>Aviso legal:</strong> La información contenida en este sitio web tiene fines exclusivamente informativos y orientativos. No sustituye el asesoramiento, diagnóstico ni tratamiento médico profesional. Salud a Mano no garantiza la exactitud ni actualidad de los datos provistos y no asume responsabilidad por decisiones tomadas por los usuarios. El uso del contenido es responsabilidad exclusiva del visitante.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
