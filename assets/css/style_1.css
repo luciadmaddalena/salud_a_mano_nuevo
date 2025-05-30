@@ -49,7 +49,7 @@ header {
   top: 0;
   background: var(--secondary-light);
   border: 2px solid var(--secondary-dark);
-  border-radius: 2.5rem;
+  border-radius: 3rem;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   margin: 1rem auto 2rem;
@@ -253,7 +253,8 @@ header {
   .card {
     background-color: var(--secondary-light); 
     border: 2px solid var(--accent-mint);
-    border-radius: 3rem;
+    /* border-radius: 30px; */
+    border-radius: 5rem;
     padding: 2rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1394,9 +1395,9 @@ input[type="radio"]:checked + label.mini-card {
   width: 100%;                   
   overflow-wrap: break-word;     
   word-wrap: break-word;         
-  word-break: break-word; 
+  word-break: break-word; /* Forzar quiebre si hay aún texto muy largo */
   white-space: normal; 
-  overflow-y: auto; max-height: 100%; 
+  overflow-y: auto; max-height: 100%; /* scroll interno */
 }
 
 #titulo-info {
@@ -1435,6 +1436,12 @@ input[type="radio"]:checked + label.mini-card {
   } 
   
 /* =========================== Campañas =================================== */
+
+
+
+
+/* --- Rejilla de dos columnas (auto-fit) --- */
+/* --- Rejilla de columnas --- */
 .grid-campañas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1442,9 +1449,9 @@ input[type="radio"]:checked + label.mini-card {
   margin: 0 auto;
   max-width: 1200px;
   padding: 2rem 0;
-  align-items: stretch;
 }
 
+/* --- Cada tarjeta --- */
 .card-campaña {
   background: var(--secondary-light);
   border: 2px solid var(--accent-mint);
@@ -1454,41 +1461,22 @@ input[type="radio"]:checked + label.mini-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 100%;
 }
-
 .card-campaña:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  background-color: var(--secondary-light);
-  color: var(--primary-dark);
-  border-color: var(--accent-lavender);
 }
 
+/* --- Contenido interno en una columna por defecto --- */
 .campaña-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: space-between;
   width: 100%;
-  height: 100%;
 }
 
-.mini-tarjeta-img {
-  background-color: var(--secondary-light);
-  border: 2px solid var(--accent-mint); 
-  border-radius: 5rem;
-  padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  max-width: 400px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* --- Imagen --- */
 .campaña-img {
   display: flex;
   justify-content: center;
@@ -1501,30 +1489,16 @@ input[type="radio"]:checked + label.mini-card {
   display: block;
 }
 
+/* --- Texto --- */
 .campaña-texto {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
   max-width: 500px;
-  font-size: clamp(0.8rem, 3vw, 1.2rem);
 }
 
-.campaña-texto h3 {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-}
-
-.contenido-superior {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* --- Botón --- */
 .btn {
   display: inline-block;
-  margin-top: auto;
-  margin-bottom: 3rem;
+  margin-top: 1rem;
   padding: .75rem 1.5rem;
   background: var(--accent-lavender);
   color: var(--primary-light);
@@ -1532,14 +1506,37 @@ input[type="radio"]:checked + label.mini-card {
   text-decoration: none;
   transition: background .3s;
 }
-
 .btn:hover {
   background: var(--accent-orange);
 }
 
+/* --- Vista en desktop (opcional: columnas internas en vez de stack) --- */
 @media (min-width: 768px) {
   .campaña-content {
-    flex-direction: column; 
+    flex-direction: column; /* Se mantiene apilado, pero centrado */
   }
 }
+
+
+/* ============================================efecto tarjetas */
+.card {
+  position: relative;
+  overflow: hidden; /* Para que no se desborde la capa */
+}
+
+.card {
+  border-width: 4px;
+  border-style: solid;
+  border-image: linear-gradient(to right, var(--accent-lime), var(--accent-lilac)) 1;
+  transition: border-image 0.3s ease;
+  border-radius: 5rem;
+}
+
+.card:hover {
+  border-image: linear-gradient(to right, var(--accent-coral), var(--accent-mint)) 1;
+  border-radius: 5rem;
+}
+
+
+
 
