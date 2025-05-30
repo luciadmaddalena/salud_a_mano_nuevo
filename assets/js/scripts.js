@@ -259,6 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <h3>${centroSeleccionado.nombre}</h3>
       <p><strong>Ciudad:</strong> ${centroSeleccionado.ciudad}</p>
       <p><strong>Especialidades:</strong> ${centroSeleccionado.especialidades.join(", ")}</p>
+      <p><strong>Turnos:</strong> ${centroSeleccionado.turnos}</p> 
       <a href="https://www.google.com/maps/search/?api=1&query=${centroSeleccionado.coordenadas[0]},${centroSeleccionado.coordenadas[1]}"
          target="_blank">Ver en Google Maps</a>
     `;
