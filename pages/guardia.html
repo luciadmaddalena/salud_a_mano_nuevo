@@ -50,7 +50,7 @@
       </div>
 
       <div class="box-guardia">
-        <form class="formulario-guardia">
+        <form name="formulario-guardia" class="formulario-guardia" >
           <div class="caja-guardia">
             <fieldset class="fieldset-guardia">
               <legend>🩺 Sección 1: Signos de alarma</legend>
@@ -158,12 +158,13 @@
             </fieldset>
           </div>
 
-          <button class="button-recomendacion" type="button">Ver recomendación</button>
+          <button onclick="evaluarFormulario()" class="button-recomendacion" type="button">Ver recomendación</button>
 
+          
+          <div id="resultado" class="resultado"></div>
           <p class="aclaracion-guardia">📝 <strong> Aclaración importante:</strong>
 Este formulario es solo una herramienta orientativa y no reemplaza una consulta médica. Si tenés dudas, síntomas graves o empeoramiento, no dudes en acudir al sistema de salud.</p>
 
-          <div id="resultado" class="resultado"></div>
         </form>
       </div>
     </main>
@@ -184,5 +185,6 @@ Este formulario es solo una herramienta orientativa y no reemplaza una consulta 
         </p>
       </div>
     </footer>
+    <script src="../assets/js/scriptguardia.js"></script> 
   </body>
 </html>
