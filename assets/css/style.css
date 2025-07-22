@@ -625,19 +625,17 @@ select[multiple] option:checked {
 
 /* ==================Estilos para la sección de Guardia================= */
 .box-guardia {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2%;
-  padding: 1%;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 2rem;
   border-radius: 30px;
 }
 
 
 .fieldset-guardia {
   max-width: 1200px;
- margin-bottom: 1%;
+  margin-bottom: 1%;
   background-color: var(--secondary-light);
   border: 2px solid var(--accent-mint);
   border-radius: 2.5rem;
