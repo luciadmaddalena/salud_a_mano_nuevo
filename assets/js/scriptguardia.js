@@ -56,7 +56,7 @@ function evaluarFormulario() {
   if (totalAlarmas >= 1) {
     // Caso urgente - ir a guardia
     titulo = "Atención Urgente";
-    icono = "../assets/img/ambulancia.png"; // Cambiar por tu imagen
+    icono = "../assets/img/triage_rojo_sinfondo.png"; // Cambiar por tu imagen
     recomendacion = `
       <p>Basado en tus respuestas, <strong>recomendamos que acudas a la guardia médica lo antes posible</strong>.</p>
       <p>Presentás ${totalAlarmas > 1 ? 'varios' : 'un'} signo(s) de alarma que requieren evaluación médica inmediata.</p>
@@ -65,7 +65,7 @@ function evaluarFormulario() {
   } else if (totalLeves >= 3) {
     // Caso intermedio - consultar médico
     titulo = "Consulta Médica";
-    icono = "../assets/img/consultorio.png"; // Cambiar por tu imagen
+    icono = "../assets/img/triage_amarillo_sinfondo.png"; // Cambiar por tu imagen
     recomendacion = `
       <p>Tienes varios síntomas que, aunque no son urgentes, <strong>merecen una evaluación médica</strong>.</p>
       <p>Te recomendamos:</p>
@@ -78,7 +78,7 @@ function evaluarFormulario() {
   } else {
     // Caso leve - autocuidado
     titulo = "Autocuidado";
-    icono = "../assets/img/curita.png"; // Cambiar por tu imagen
+    icono = "../assets/img/triage_verde_sinfondo.png"; // Cambiar por tu imagen
     recomendacion = `
       <p>Tus síntomas parecen leves y <strong>puedes manejarlos con autocuidado</strong>.</p>
       <p>Recomendaciones:</p>
