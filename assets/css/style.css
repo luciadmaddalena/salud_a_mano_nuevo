@@ -112,7 +112,6 @@ header {
 .nav-links a {
   color: var(--primary-dark);
   text-decoration: none;
-  font-weight: ;
   transition: color 0.3s;
   padding: 0.3rem 0.8rem;
   font-size: 1.1rem;
@@ -240,11 +239,13 @@ header {
   padding: 1.5rem 0;
 }
 
-.seccion-1 , .seccion-2, .seccion-3, .seccion-4 {
+.seccion-1,
+.seccion-2,
+.seccion-3,
+.seccion-4 {
   background-color: var(--secondary-light);
   padding: 1.5rem 0;
 }
-
 
 .container-card {
   max-width: 900px;
@@ -285,7 +286,6 @@ header {
 }
 
 /* Animación de flotación para las imágenes */
-
 
 /*Hover de las tarjetas*/
 .card-1:hover {
@@ -355,7 +355,10 @@ header {
 }
 
 /* Colores y características específicas para cada tarjeta */
-.card-1 , .card-2 , .card-3 , .card-4  {
+.card-1,
+.card-2,
+.card-3,
+.card-4 {
   width: 100%; /* Ocupará el 100% del container-card */
   max-width: none;
 }
@@ -407,7 +410,6 @@ header {
 .card:hover .imagen-tarjeta img {
   transform: scale(1.1);
 }
-
 
 /* Footer */
 footer {
@@ -523,7 +525,6 @@ footer {
   color: var(--text-secondary);
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   margin-bottom: 0.5rem;
-  
 }
 
 .tag-form .input,
@@ -573,7 +574,7 @@ select[multiple] option:checked {
   color: white;
 }
 
-/* Consentimiento mejorado */
+/* Consentimiento */
 .consentimiento {
   font-size: 0.8rem;
   color: var(--text-secondary);
@@ -621,8 +622,6 @@ select[multiple] option:checked {
   background-color: var(--accent-orange);
 }
 
-
-
 /* ==================Estilos para la sección de Guardia================= */
 .box-guardia {
   max-width: 900px;
@@ -631,7 +630,6 @@ select[multiple] option:checked {
   padding: 0 2rem;
   border-radius: 30px;
 }
-
 
 .fieldset-guardia {
   max-width: 1200px;
@@ -642,7 +640,6 @@ select[multiple] option:checked {
   padding: 1.1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-
 }
 
 .fieldset-guardia:hover {
@@ -676,7 +673,6 @@ select[multiple] option:checked {
   margin-bottom: 1rem;
   padding: 0;
 }
-
 
 .fieldset-guardia label {
   display: flex;
@@ -848,7 +844,6 @@ select[multiple] option:checked {
 .modal-button:hover {
   background-color: var(--accent-orange);
 }
-
 
 /*================= Estilos para la sección Búsqueda de centros (search) =============================*/
 
@@ -1135,7 +1130,6 @@ input[type="radio"]:checked + label.mini-card {
   font-size: clamp(0.5rem, 2vw, 0.7rem);
 }
 
-
 /*================== Estilos de la sección Campañas =================================*/
 .grid-campañas {
   display: grid;
@@ -1380,7 +1374,6 @@ input[type="radio"]:checked + label.mini-card {
     line-height: 2rem;
   }
 
-
   .box-guardia {
     flex-direction: column;
     align-items: center;
@@ -1395,19 +1388,12 @@ input[type="radio"]:checked + label.mini-card {
   .fieldset-guardia legend {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
-  } 
+  }
   .fieldset-guardia label {
     min-height: auto;
     margin-bottom: 0.6rem;
     padding: 0.6rem;
   }
-  @media (min-width: 1200px) {
-  .box-guardia {
-    justify-content: space-between;
-  }
-}
-
-
 
   /* search : tarjeta 1 */
   .card-1 .contenido-ciudades {
@@ -1634,7 +1620,6 @@ input[type="radio"]:checked + label.mini-card {
   }
 }
 
-
 /* Responsive Tablet Grande */
 @media (min-width: 1024px) and (max-width: 1200px) {
   .container {
@@ -1708,3 +1693,8 @@ input[type="radio"]:checked + label.mini-card {
     font-size: 1rem;
   }
 }
+ @media (min-width: 1200px) {
+    .box-guardia {
+      justify-content: space-between;
+    }
+  }
